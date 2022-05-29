@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+
+import '../../constant/colors.dart';
+
+class MyTextFormFieldWidget extends StatelessWidget {
+  const MyTextFormFieldWidget({
+    Key? key,
+     this.controller,
+    required this.type, this.hint, this.icon, this.validation, this.onSave, this.min, required this.color, required this.isPass, this.style,
+  }) : super(key: key);
+
+  final TextEditingController? controller;
+  final TextInputType type;
+  final String? hint;
+  final Icon? icon;
+  final String? Function(String?)? validation;
+  final String? Function(String?)? onSave;
+  final int? min;
+  final Color color;
+  final bool isPass;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      keyboardType: type,
+      controller: controller,
+      autofocus: false,
+      cursorColor: color,
+      validator: validation,
+      obscureText: isPass,
+      onSaved: onSave,
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: style ?? const TextStyle(fontWeight: FontWeight.bold,color: Colors.grey,fontFamily: 'khebrat'),
+        hoverColor: color,
+        focusColor: color,
+        fillColor: color,
+        contentPadding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+        //border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: color,width: 1.3)),
+        enabledBorder: OutlineInputBorder(borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(17),
+            topLeft: Radius.circular(17),
+            bottomRight: Radius.circular(17)
+        ),borderSide: BorderSide(color: color,width: 1.3)),
+        //focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: color,width: 1.3)),
+        prefixIcon: icon
+      ),
+    );
+  }
+}
+
