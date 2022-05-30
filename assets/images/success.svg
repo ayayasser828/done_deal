@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="196" height="196" viewBox="0 0 196 196">
+    <defs>
+        <filter id="Path_Success_3" x="0" y="0" width="196" height="196" filterUnits="userSpaceOnUse">
+            <feOffset dy="20" input="SourceAlpha"/>
+            <feGaussianBlur stdDeviation="10" result="blur"/>
+            <feFlood flood-color="#d7d7d7" flood-opacity="0.235"/>
+            <feComposite operator="in" in2="blur"/>
+        </filter>
+        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#07a581"/>
+            <stop offset="0.509" stop-color="#4d9b89"/>
+            <stop offset="1" stop-color="#919191"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" y1="-0.182" x2="0.643" y2="0.648" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#cc9" stop-opacity="0.431"/>
+            <stop offset="1" stop-color="#636319" stop-opacity="0.451"/>
+            <stop offset="1" stop-color="#ff7643" stop-opacity="0.729"/>
+        </linearGradient>
+    </defs>
+    <g id="Success_Illustration" data-name="Success Illustration" transform="translate(30 10)">
+        <g id="Path_Success_3-2" data-name="Path Success 3">
+            <g transform="matrix(1, 0, 0, 1, -30, -10)" filter="url(#Path_Success_3)">
+                <circle id="Path_Success_3-3" data-name="Path Success 3" cx="68" cy="68" r="68" transform="translate(30 10)" fill="#fff"/>
+            </g>
+            <circle id="Path_Success_3-4" data-name="Path Success 3" cx="68" cy="68" r="68" fill="url(#linear-gradient)"/>
+        </g>
+        <g id="Path_Success_2" data-name="Path Success 2" transform="translate(8 8)">
+            <circle id="Path_Success_2-2" data-name="Path Success 2" cx="60" cy="60" r="60" fill="none"/>
+            <g id="Path_Success_2-3" data-name="Path Success 2" transform="translate(-15.75)" fill="url(#linear-gradient-2)">
+                <path d="M75.5,0Z" stroke="none"/>
+                <path d="M 63.46296691894531 0 L 87.53703308105469 0 L 63.46296691894531 0 Z" stroke="none" fill="#fff"/>
+            </g>
+        </g>
+        <path id="Path_Success_1" data-name="Path Success 1" d="M0,14.443,17.279,32l12.8-12.516,3.8-3.717L50,0" transform="translate(46.89 52.133)" fill="none" stroke="#f9fbfc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="9.192"/>
+    </g>
+</svg>

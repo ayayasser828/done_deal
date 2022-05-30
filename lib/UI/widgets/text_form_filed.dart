@@ -12,7 +12,7 @@ class MyTextFormFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType type;
   final String? hint;
-  final Icon? icon;
+  final Widget? icon;
   final String? Function(String?)? validation;
   final String? Function(String?)? onSave;
   final int? min;
@@ -29,6 +29,7 @@ class MyTextFormFieldWidget extends StatelessWidget {
       cursorColor: color,
       validator: validation,
       obscureText: isPass,
+      maxLines: min,
       onSaved: onSave,
       decoration: InputDecoration(
         hintText: hint,

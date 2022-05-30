@@ -1,0 +1,12 @@
+<svg id="card_choose_" data-name="card / choose " xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path id="Rectangle" d="M10,0H40a0,0,0,0,1,0,0V30A10,10,0,0,1,30,40H10A10,10,0,0,1,0,30V10A10,10,0,0,1,10,0Z" fill="#c8c8d3"/>
+    <g id="icon_shop" data-name="icon / shop" transform="translate(9.997 10)">
+        <g id="handshake" transform="translate(0 0.833)">
+            <path id="Path" d="M3.735.224A.8.8,0,0,0,2.6,1.351L4.86,3.6,3.806,4.648,1.55,2.4A.8.8,0,1,0,.419,3.528L2.465,5.567a4.048,4.048,0,0,1-1.825.3A2.836,2.836,0,0,1,0,7.4a5.693,5.693,0,0,0,.908.08,5.6,5.6,0,0,0,3.96-1.632l1.686-1.7a.8.8,0,0,0,0-1.125Z" transform="translate(9.497 9.668)" fill="#4668d9"/>
+            <path id="Path-2" data-name="Path" d="M1.46,9.449a2.873,2.873,0,0,1,.818-.558,4.827,4.827,0,0,1,4.99-7.227l.346-.345A7.345,7.345,0,0,1,8.723.411,6.439,6.439,0,0,0,1.06,9.962,2.893,2.893,0,0,1,1.46,9.449Z" transform="translate(0 0.001)" fill="#4668d9"/>
+            <path id="Rectangle-2" data-name="Rectangle" d="M.008,2.1A2.09,2.09,0,0,1,2.093.01L7.421,0A2.08,2.08,0,0,1,9.506,2.081H9.5A2.09,2.09,0,0,1,7.413,4.17l-5.328.01A2.08,2.08,0,0,1,0,2.1Z" transform="translate(3.507 8.528) rotate(45)" fill="#4668d9"/>
+            <path id="Path-3" data-name="Path" d="M12.841,1.884a6.473,6.473,0,0,0-9.131,0L0,5.58l.566.564a2.506,2.506,0,0,0,3.531,0L5.532,4.716l6.739,6.836.571-.569a6.417,6.417,0,0,0,0-9.1Z" transform="translate(4.471 0)" fill="#4668d9"/>
+        </g>
+        <rect id="Rectangle-3" data-name="Rectangle" width="20" height="20" transform="translate(0.003)" fill="none"/>
+    </g>
+</svg>

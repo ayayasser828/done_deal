@@ -1,0 +1,9 @@
+<svg id="card_choose_" data-name="card / choose " xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+    <path id="Rectangle" d="M10,0H40a0,0,0,0,1,0,0V30A10,10,0,0,1,30,40H10A10,10,0,0,1,0,30V10A10,10,0,0,1,10,0Z" fill="#07a581"/>
+    <g id="icon_shop" data-name="icon / shop" transform="translate(10 10)">
+        <g id="wallet-90">
+            <rect id="Rectangle-2" data-name="Rectangle" width="13.333" height="3.333" transform="translate(5)" fill="#fff"/>
+            <path id="Shape" d="M19.167,18.333H3.333A3.337,3.337,0,0,1,0,15V2.5A2.5,2.5,0,0,1,2.5,0h.833V1.666H2.5a.833.833,0,1,0,0,1.666H19.167A.835.835,0,0,1,20,4.167V17.5A.834.834,0,0,1,19.167,18.333ZM15,9.166a1.667,1.667,0,1,0,1.667,1.667A1.668,1.668,0,0,0,15,9.166Z" transform="translate(0 1.667)" fill="#fff"/>
+        </g>
+    </g>
+</svg>
