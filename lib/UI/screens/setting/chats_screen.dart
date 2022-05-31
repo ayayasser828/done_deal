@@ -1,15 +1,12 @@
-import 'package:done_deal/constant/strings.dart';
+import 'package:done_deal/UI/widgets/chat_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../constant/colors.dart';
 import '../../../constant/style.dart';
-import '../../widgets/text_button.dart';
 
-class ConfirmScreen extends StatelessWidget {
-  const ConfirmScreen({Key? key}) : super(key: key);
+class ChatsScreen extends StatelessWidget {
+  const ChatsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,22 +28,24 @@ class ConfirmScreen extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(height: 4.h,),
-            Text(tr('registered'),style: textStyle.copyWith(fontSize: 20),),
-            SizedBox(height: 17.h,),
-            SvgPicture.asset('assets/images/success.svg'),
-            SizedBox(height: 12.h,),
-            MyButtonWidget(
-                btnTxt: tr('to_home'),
-                btnWidth: 78.w,
-                btnHeight: 5.h,
-                onPressed: () => Navigator.pushNamed(context, navBar),
-                color: buttonColor,
-                borderColor: buttonColor,
-                weight: FontWeight.w600,
-                textSize: 16,
-                textColor: Colors.white),
-            SizedBox(height: 5.h,),
+            SizedBox(height: 2.h,),
+            Text(tr('chat'),style: textStyle.copyWith(fontSize: 20),),
+            SizedBox(height: 2.h,),
+            Center(
+              child: SizedBox(
+                height: 75.h,
+                width: 90.w,
+                child: ListView.separated(
+                    itemBuilder: (BuildContext context, int index) {
+                      return chatCard(context);
+                    },
+                    separatorBuilder: (context, index) => const SizedBox(
+                      height: 30,
+                    ),
+                    scrollDirection: Axis.vertical,
+                    itemCount: 5),
+              ),
+            )
           ],
         ),
       )),

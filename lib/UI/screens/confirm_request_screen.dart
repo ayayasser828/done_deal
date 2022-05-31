@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../constant/colors.dart';
 import '../../constant/strings.dart';
@@ -20,31 +22,31 @@ class ConfirmRequestScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Icon(Icons.arrow_back_ios),
-                SizedBox(width: width*0.15,),
+                IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
+                SizedBox(width: 10.w,),
                 SizedBox(
-                  width: width*0.5,
-                  height: height*0.12,
+                  width: 50.w,
+                  height: 12.h,
                   child: Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
                 )
               ],
             ),
-            SizedBox(height: height*0.04,),
-            Text('Your request has been sent',style: textStyle.copyWith(fontSize: 20),),
-            SizedBox(height: height*0.17,),
+            SizedBox(height: 4.h,),
+            Text(tr('req_sent'),style: textStyle.copyWith(fontSize: 20),),
+            SizedBox(height: 17.h,),
             SvgPicture.asset('assets/images/success.svg'),
-            SizedBox(height: height*0.2,),
+            SizedBox(height: 20.h,),
             MyButtonWidget(
-                btnTxt: 'Back to home',
-                btnWidth: width * 0.78,
-                btnHeight: height * 0.055,
+                btnTxt: tr('back_home'),
+                btnWidth: 78.w,
+                btnHeight: 5.h,
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(context, navBar, (route) => false),
                 color: buttonColor,
                 borderColor: buttonColor,
                 weight: FontWeight.w600,
                 textSize: 16,
                 textColor: Colors.white),
-            SizedBox(height: height*0.05,),
+            SizedBox(height: 5.h,),
           ],
         ),
       )),

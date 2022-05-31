@@ -8,8 +8,8 @@ import '../../../constant/style.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
 
-class AddPassScreen extends StatelessWidget {
-  const AddPassScreen({Key? key}) : super(key: key);
+class ChangePassScreen extends StatelessWidget {
+  const ChangePassScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,11 @@ class AddPassScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('add_pass'),style: textStyle.copyWith(fontSize: 20),),
-              SizedBox(height: 4.h,),
+              Text(tr('change_pass'),style: textStyle.copyWith(fontSize: 20),),
+              SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
-                height: 60.h,
+                height: 61.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -54,7 +54,26 @@ class AddPassScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(height: 1.h,),
-                        Text(tr('pass'),style: textStyle,textAlign: TextAlign.center),
+                        Text(tr('old_pass'),style: textStyle,textAlign: TextAlign.center),
+                        SizedBox(height: 1.h,),
+                        Container(
+                          width: 72.w,
+                          decoration: const BoxDecoration(
+                              color: textFieldColor,
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(17),
+                                  topLeft: Radius.circular(17),
+                                  bottomRight: Radius.circular(17)
+                              )
+                          ),
+                          child: const MyTextFormFieldWidget(
+                            style: TextStyle(fontSize: 23,color: Colors.grey),
+                            type: TextInputType.number,
+                            color: Colors.white,
+                            isPass: false,),
+                        ),
+                        SizedBox(height: 1.h,),
+                        Text(tr('new_pass'),style: textStyle,textAlign: TextAlign.center),
                         SizedBox(height: 1.h,),
                         Container(
                           width: 72.w,
@@ -93,10 +112,10 @@ class AddPassScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 10.h,),
                         MyButtonWidget(
-                            btnTxt: tr('register'),
+                            btnTxt: tr('change'),
                             btnWidth: 78.w,
                             btnHeight: 5.h,
-                            onPressed: () => Navigator.pushNamed(context, addDoc),
+                            onPressed: () {},
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,

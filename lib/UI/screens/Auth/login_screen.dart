@@ -1,5 +1,7 @@
 import 'package:done_deal/constant/strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import '../../../constant/colors.dart';
 import '../../../constant/style.dart';
 import '../../widgets/text_button.dart';
@@ -14,127 +16,121 @@ class LoginScreen extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  const Icon(Icons.arrow_back_ios),
-                  SizedBox(width: width*0.15,),
-                  SizedBox(
-                    width: width*0.5,
-                    height: height*0.12,
-                    child: Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
-                  )
-                ],
-              ),
-              SizedBox(height: height*0.04,),
-              Text('Welcome To DoneDell',style: textStyle.copyWith(fontSize: 20),),
-              SizedBox(height: height*0.02,),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 60.0),
-                child: Text('Login to your account',style: textStyle,textAlign: TextAlign.center),
-              ),
-              SizedBox(height: height*0.04,),
-              SizedBox(
-                width: width*0.85,
-                height: height*0.6,
-                child: Card(
-                  color: Colors.white,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        topLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)
-                      )),
-                  elevation: 9,
-                  child: Form(child: Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(height: height*0.01,),
-                        const Text('Phone',style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: height*0.01,),
-                        Container(
-                          width: width*0.72,
-                          decoration: const BoxDecoration(
-                            color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
-                          ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
-                        ),
-                        SizedBox(height: height*0.01,),
-                        const Text('Password',style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: height*0.01,),
-                        Container(
-                          width: width*0.72,
-                          decoration: const BoxDecoration(
+          child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
+                SizedBox(height: 4.h,),
+                Text(tr('welcome'),style: textStyle.copyWith(fontSize: 20),),
+                SizedBox(height: 2.h,),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60.0),
+                  child: Text(tr('login'),style: textStyle,textAlign: TextAlign.center),
+                ),
+                SizedBox(height: 4.h,),
+                SizedBox(
+                  width: 85.w,
+                  height: 60.h,
+                  child: Card(
+                    color: Colors.white,
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(15),
+                          topLeft: Radius.circular(15),
+                          bottomRight: Radius.circular(15)
+                        )),
+                    elevation: 9,
+                    child: Form(child: Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 1.h,),
+                          Text(tr('phone'),style: textStyle,textAlign: TextAlign.center),
+                          SizedBox(height: 1.h,),
+                          Container(
+                            width: 72.w,
+                            decoration: const BoxDecoration(
                               color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(17),
+                                    topLeft: Radius.circular(17),
+                                    bottomRight: Radius.circular(17)
+                                )
+                            ),
+                            child: const MyTextFormFieldWidget(
+                              style: TextStyle(fontSize: 23,color: Colors.grey),
+                              type: TextInputType.number,
+                              color: Colors.white,
+                              isPass: false,),
                           ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
-                        ),
-                        SizedBox(height: height*0.005,),
-                        RichText(
-                          text: TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(text: 'Forget Password ? ',style: textStyle.copyWith(fontSize: 10),),
-                              TextSpan(text: 'reset',style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
-                            ],
+                          SizedBox(height: 1.h,),
+                          Text(tr('pass'),style: textStyle,textAlign: TextAlign.center),
+                          SizedBox(height: 1.h,),
+                          Container(
+                            width: 72.w,
+                            decoration: const BoxDecoration(
+                                color: textFieldColor,
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(17),
+                                    topLeft: Radius.circular(17),
+                                    bottomRight: Radius.circular(17)
+                                )
+                            ),
+                            child: const MyTextFormFieldWidget(
+                              style: TextStyle(fontSize: 23,color: Colors.grey),
+                              type: TextInputType.number,
+                              color: Colors.white,
+                              isPass: false,),
                           ),
-                        ),
-                        SizedBox(height: height*0.05,),
-                        MyButtonWidget(
-                            btnTxt: 'login Now',
-                            btnWidth: width * 0.78,
-                            btnHeight: height * 0.055,
-                            onPressed: () => Navigator.pushNamedAndRemoveUntil(context, navBar, (route) => false),
-                            color: buttonColor,
-                            borderColor: buttonColor,
-                            weight: FontWeight.w600,
-                            textSize: 16,
-                            textColor: Colors.white),
-                        SizedBox(height: height*0.05,),
-                        InkWell(
-                          onTap: (){
-                            Navigator.pushNamed(context, register);
-                          },
-                          child: Center(
-                            child: RichText(
-                              text: TextSpan(
-                                children: <TextSpan>[
-                                  TextSpan(text: "Don't have an account ? ",style: textStyle.copyWith(fontSize: 10),),
-                                  TextSpan(text: 'register now',style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
-                                ],
+                          SizedBox(height: 0.5.h,),
+                          RichText(
+                            text: TextSpan(
+                              children: <TextSpan>[
+                                TextSpan(text: tr('forget'),style: textStyle.copyWith(fontSize: 10),),
+                                TextSpan(text: tr('reset'),style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 5.h,),
+                          MyButtonWidget(
+                              btnTxt: tr('login_now'),
+                              btnWidth: 78.w,
+                              btnHeight: 5.h,
+                              onPressed: () => Navigator.pushNamedAndRemoveUntil(context, navBar, (route) => false),
+                              color: buttonColor,
+                              borderColor: buttonColor,
+                              weight: FontWeight.w600,
+                              textSize: 16,
+                              textColor: Colors.white),
+                          SizedBox(height: 5.h,),
+                          InkWell(
+                            onTap: (){
+                              Navigator.pushNamed(context, register);
+                            },
+                            child: Center(
+                              child: RichText(
+                                text: TextSpan(
+                                  children: <TextSpan>[
+                                    TextSpan(text: tr('have_acc'),style: textStyle.copyWith(fontSize: 10),),
+                                    TextSpan(text: tr('register'),style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  )),
+                        ],
+                      ),
+                    )),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       )),

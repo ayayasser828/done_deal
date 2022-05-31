@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../constant/colors.dart';
 import '../../../constant/strings.dart';
@@ -39,21 +41,21 @@ class OTPPassScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  const Icon(Icons.arrow_back_ios),
-                  SizedBox(width: width*0.15,),
+                  IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
+                  SizedBox(width: 10.w,),
                   SizedBox(
-                    width: width*0.5,
-                    height: height*0.12,
+                    width: 50.w,
+                    height: 12.h,
                     child: Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
                   )
                 ],
               ),
-              SizedBox(height: height*0.04,),
-              Text('OTP PASSWORD',style: textStyle.copyWith(fontSize: 20),),
-              SizedBox(height: height*0.04,),
+              SizedBox(height: 4.h,),
+              Text(tr('otp_pass'),style: textStyle.copyWith(fontSize: 20),),
+              SizedBox(height: 4.h,),
               SizedBox(
-                width: width*0.85,
-                height: height*0.32,
+                width: 85.w,
+                height: 31.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -69,17 +71,16 @@ class OTPPassScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        SizedBox(height: height*0.01,),
-                        const Text('Enter 4 number sent to you on your phone'),
-                        SizedBox(height: height*0.01,),
+                        SizedBox(height: 1.h,),
+                        Text(tr('enter')),
+                        SizedBox(height: 1.h,),
                         const Center(child: Text('+201033076500',style: textStyle,textAlign: TextAlign.center)),
-                        SizedBox(height: height*0.03,),
+                        SizedBox(height: 3.h,),
                         SizedBox(width: width*0.8,height: height*0.1,child: buildPinCodeFields(context),),
-                        SizedBox(height: height*0.01,),
                         MyButtonWidget(
-                            btnTxt: 'verify now',
-                            btnWidth: width * 0.78,
-                            btnHeight: height * 0.055,
+                            btnTxt: tr('verify'),
+                            btnWidth: 78.w,
+                            btnHeight: 5.h,
                             onPressed: () => Navigator.pushNamed(context, addPass),
                             color: buttonColor,
                             borderColor: buttonColor,
@@ -91,7 +92,7 @@ class OTPPassScreen extends StatelessWidget {
                   )),
                 ),
               ),
-              SizedBox(height: height*0.02,),
+              SizedBox(height: 2.h,),
               Center(
                 child: CountdownTimer(
                   endTime: endTime,
@@ -101,12 +102,12 @@ class OTPPassScreen extends StatelessWidget {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(
-                          "Request a new code ",
+                          tr('new_code'),
                           style: textStyle2,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.refresh,
                           color: buttonColor,
                         ),

@@ -1,10 +1,11 @@
 import 'package:done_deal/constant/colors.dart';
 import 'package:done_deal/constant/strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:sizer/sizer.dart';
 import '../../../constant/style.dart';
 import '../../widgets/text_button.dart';
 
@@ -28,21 +29,21 @@ class _AddDocScreenState extends State<AddDocScreen> {
             children: [
               Row(
                 children: [
-                  const Icon(Icons.arrow_back_ios),
-                  SizedBox(width: width*0.15,),
+                  IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
+                  SizedBox(width: 10.w,),
                   SizedBox(
-                    width: width*0.5,
-                    height: height*0.12,
+                    width: 50.w,
+                    height: 12.h,
                     child: Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
                   )
                 ],
               ),
-              SizedBox(height: height*0.02,),
-              Text('Documents',style: textStyle.copyWith(fontSize: 20),),
-              SizedBox(height: height*0.02,),
+              SizedBox(height: 2.h,),
+              Text(tr('doc'),style: textStyle.copyWith(fontSize: 20),),
+              SizedBox(height: 2.h,),
               SizedBox(
-                width: width*0.85,
-                height: height*0.73,
+                width: 85.w,
+                height: 73.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -58,16 +59,16 @@ class _AddDocScreenState extends State<AddDocScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text('ID card',style: textStyle.copyWith(color: Colors.black),textAlign: TextAlign.center),
-                        SizedBox(height: height*0.03,),
+                        Text(tr('id'),style: textStyle.copyWith(color: Colors.black),textAlign: TextAlign.center),
+                        SizedBox(height: 3.h,),
                         Row(
                           children: [
                             buildImagePicker(image: image),
                             InkWell(
                               onTap: () => pickImage(),
                               child: SizedBox(
-                                height: height * 0.2,
-                                width: width*0.7,
+                                height: 20.h,
+                                width: 70.w,
                                 child: Image.asset(
                                   'assets/images/drag-drop-upload-1.png',
                                 ),
@@ -75,18 +76,18 @@ class _AddDocScreenState extends State<AddDocScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(height: height*0.07,),
+                        SizedBox(height: 7.h,),
                         MyButtonWidget(
-                            btnTxt: 'Send Now',
-                            btnWidth: width * 0.78,
-                            btnHeight: height * 0.055,
+                            btnTxt: tr('send'),
+                            btnWidth: 78.w,
+                            btnHeight: 5.h,
                             onPressed: () => Navigator.pushNamedAndRemoveUntil(context, confirm, (route) => false),
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
                             textSize: 16,
                             textColor: Colors.white),
-                        SizedBox(height: height*0.05,),
+                        SizedBox(height: 5.h,),
                       ],
                     ),
                   )),

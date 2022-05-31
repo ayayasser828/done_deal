@@ -1,6 +1,8 @@
 import 'package:done_deal/constant/colors.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../widgets/home_card.dart';
 import '../../widgets/text_form_filed.dart';
@@ -21,15 +23,15 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                height: height * 0.02,
+                height: 2.h,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: width * 0.72,
-                    height: height * 0.05,
+                    width: 72.w,
+                    height: 5.h,
                     decoration: const BoxDecoration(
                         color: white,
                         borderRadius: BorderRadius.only(
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     child: MyTextFormFieldWidget(
                       style: const TextStyle(fontSize: 16, color: Colors.grey),
                       type: TextInputType.number,
-                      hint: 'Search Properties, Area etc ...',
+                      hint: tr('search'),
                       icon: SvgPicture.asset(
                         'assets/icons/search.svg',
                         fit: BoxFit.scaleDown,
@@ -49,8 +51,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: width * 0.1,
-                    height: height * 0.05,
+                    width: 10.w,
+                    height: 5.h,
                     decoration: const BoxDecoration(
                         color: textColor, shape: BoxShape.circle),
                     child: SvgPicture.asset(
@@ -61,11 +63,11 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: height * 0.03,
+                height: 3.h,
               ),
               Center(
                 child: SizedBox(
-                  height: height * 0.78,
+                  height: 90.h,
                   width: width,
                   child: ListView.separated(
                       itemBuilder: (BuildContext context, int index) {

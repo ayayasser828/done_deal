@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:done_deal/constant/strings.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../constant/colors.dart';
 import '../../constant/style.dart';
@@ -42,10 +44,10 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 children: [
                   SizedBox(
                     width: width,
-                    height: height*0.6,
+                    height: 60.h,
                     child: CarouselSlider.builder(itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex){
                       return Image.asset('assets/images/3.png',width: width,
-                        height: height*0.6,fit: BoxFit.fill,);
+                        height: 60.h,fit: BoxFit.fill,);
                     },
                       itemCount: ItemDetailsScreen.imgList.length,
                       carouselController: buttonCarouselController,
@@ -92,22 +94,22 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                           padding: const EdgeInsets.only(left: 15.0),
                           child: Text('23 Cross, HRBR Layout, Bangalore',style: textStyle.copyWith(color: white,fontWeight: FontWeight.w400,fontSize: 15),),
                         ),
-                        SizedBox(height: height*0.03,),
+                        SizedBox(height: 3.h,),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SizedBox(width: width*0.05,),
+                            SizedBox(width: 5.w,),
                             SvgPicture.asset('assets/icons/bed.svg',color: white,),
-                            SizedBox(width: width*0.02,),
+                            SizedBox(width: 2.w,),
                             Text('3 Bed',style: textStyle.copyWith(color: white,fontWeight: FontWeight.w400,fontSize: 15),),
-                            SizedBox(width: width*0.05,),
+                            SizedBox(width: 5.w,),
                             SvgPicture.asset('assets/icons/bath.svg',color: white,),
-                            SizedBox(width: width*0.02,),
+                            SizedBox(width: 2.w,),
                             Text('3 Bath',style: textStyle.copyWith(color: white,fontWeight: FontWeight.w400,fontSize: 15),),
-                            SizedBox(width: width*0.05,),
+                            SizedBox(width: 5.w,),
                             SvgPicture.asset('assets/icons/car.svg',color: white,),
-                            SizedBox(width: width*0.02,),
+                            SizedBox(width: 2.w,),
                             Text('3 Parking',style: textStyle.copyWith(color: white,fontWeight: FontWeight.w400,fontSize: 15),),
                           ],
                         )
@@ -117,22 +119,22 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 ],
               ),
               SizedBox(
-                height: height*0.03,
+                height: 3.h,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
                 child: SizedBox(
-                  height: height*0.1,
-                  width: width*0.98,
+                  height: 10.h,
+                  width: 98.w,
                   child: ListView.separated(itemBuilder: (BuildContext context, int index){
                     return Container(
-                      width: width*0.2,
-                      height: height*0.06,
+                      width: 20.w,
+                      height: 6.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25)
                       ),
                       child: Image.asset('assets/images/3.png',fit: BoxFit.cover,width: width*0.2,
-                        height: height*0.06,),
+                        height: 6.h,),
                     );
                   },
                       separatorBuilder: (context, index) => const SizedBox(
@@ -143,7 +145,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 ),
               ),
               SizedBox(
-                height: height*0.03,
+                height: 3.h,
               ),
               request ? Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -151,10 +153,10 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Text('Name',style: textStyle,textAlign: TextAlign.center),
-                    SizedBox(height: height*0.01,),
+                    Text(tr('name'),style: textStyle,textAlign: TextAlign.center),
+                    SizedBox(height: 1.h,),
                     Container(
-                      width: width*0.9,
+                      width: 90.w,
                       decoration: const BoxDecoration(
                           color: textFieldColor,
                           borderRadius: BorderRadius.only(
@@ -169,11 +171,11 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         color: Colors.white,
                         isPass: false,),
                     ),
-                    SizedBox(height: height*0.01,),
-                    const Text('phone',style: textStyle,textAlign: TextAlign.center),
-                    SizedBox(height: height*0.01,),
+                    SizedBox(height: 1.h,),
+                    Text(tr('phone'),style: textStyle,textAlign: TextAlign.center),
+                    SizedBox(height: 1.h,),
                     Container(
-                      width: width*0.9,
+                      width: 90.w,
                       decoration: const BoxDecoration(
                           color: textFieldColor,
                           borderRadius: BorderRadius.only(
@@ -188,12 +190,12 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         color: Colors.white,
                         isPass: false,),
                     ),
-                    SizedBox(height: height*0.01,),
-                    const Text('message',style: textStyle,textAlign: TextAlign.center),
-                    SizedBox(height: height*0.01,),
+                    SizedBox(height: 1.h,),
+                    Text(tr('message'),style: textStyle,textAlign: TextAlign.center),
+                    SizedBox(height: 1.h,),
                     Container(
-                      width: width*0.9,
-                      height: height*0.15,
+                      width: 90.w,
+                      height: 15.h,
                       decoration: const BoxDecoration(
                           color: textFieldColor,
                           borderRadius: BorderRadius.only(
@@ -210,13 +212,13 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         isPass: false,),
                     ),
                     SizedBox(
-                      height: height*0.03,
+                      height: 3.h,
                     ),
                     Center(
                       child: MyButtonWidget(
-                          btnTxt: 'Send',
-                          btnWidth: width * 0.9,
-                          btnHeight: height * 0.055,
+                          btnTxt: tr('send'),
+                          btnWidth: 90.w,
+                          btnHeight: 5.h,
                           onPressed: () {
                             Navigator.pushNamed(context, confirmRequest);
                           },
@@ -234,9 +236,9 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text('Features',style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 20),),
+                    Text(tr('feature'),style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 20),),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -246,7 +248,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         Text('2Km',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
                       ],),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -256,7 +258,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         Text('2Km',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
                       ],),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -266,7 +268,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         Text('2Km',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
                       ],),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -276,21 +278,21 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         Text('2Km',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
                       ],),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
-                    Text('Description',style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 20),),
+                    Text(tr('desc'),style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 20),),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Text('Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam Voluptua. At Vero Eos Et Accusam Et Justo Duo Dolores Et Ea Rebum. Stet Clita Kasd Gubergren, No Sea Takimata Sanctus Est Lorem Ipsum Dolor Sit Amet. Lorem Ipsum Dolor Sit Amet',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
                     SizedBox(
-                      height: height*0.02,
+                      height: 2.h,
                     ),
                     Center(
                       child: MyButtonWidget(
-                          btnTxt: 'Request',
-                          btnWidth: width * 0.9,
-                          btnHeight: height * 0.055,
+                          btnTxt: tr('request'),
+                          btnWidth: 90.w,
+                          btnHeight: 5.h,
                           onPressed: () {
                             setState(() {
                               request = true;
@@ -306,7 +308,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 ),
               ),
               SizedBox(
-                height: height*0.03,
+                height: 3.h,
               ),
             ],
           ),

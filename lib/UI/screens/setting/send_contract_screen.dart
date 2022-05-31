@@ -1,28 +1,29 @@
-import 'package:done_deal/constant/strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
-
+import 'dart:io';
 import '../../../constant/colors.dart';
 import '../../../constant/style.dart';
 import '../../widgets/drop_down.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class SendContract extends StatefulWidget {
+  const SendContract({Key? key}) : super(key: key);
+
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<SendContract> createState() => _SendContractState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _SendContractState extends State<SendContract> {
   static final List<String> genderList = [
     tr('male'),
     tr('female'),
   ];
 
   String? selectedGender;
-
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -45,11 +46,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('register_acc'),style: textStyle.copyWith(fontSize: 20),),
-              SizedBox(height: 4.h,),
+              Text(tr('send_con'),style: textStyle.copyWith(fontSize: 20),),
+              SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
-                height: 65.h,
+                height: 73.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -66,67 +67,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(height: 1.h,),
-                        Text(tr('name'),style: textStyle,textAlign: TextAlign.center),
+                        Text(tr('choose_comp'),style: textStyle,textAlign: TextAlign.center),
                         SizedBox(height: 1.h,),
                         Container(
                           width: 72.w,
-                          decoration: const BoxDecoration(
-                              color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
-                          ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
-                        ),
-                        SizedBox(height: 1.h,),
-                        Text(tr('phone'),style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: 1.h,),
-                        Container(
-                          width: 72.w,
-                          decoration: const BoxDecoration(
-                              color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
-                          ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
-                        ),
-                        SizedBox(height: 1.h,),
-                        Text(tr('date'),style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: 1.h,),
-                        Container(
-                          width: 72.w,
-                          decoration: const BoxDecoration(
-                              color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
-                          ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
-                        ),
-                        SizedBox(height: 1.h,),
-                        Text(tr('gender'),style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: 1.h,),
-                        Container(
-                          width: 30.w,
                           decoration: const BoxDecoration(
                               color: textFieldColor,
                               borderRadius: BorderRadius.only(
@@ -155,12 +99,68 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 : 'Select Gender',
                           ),
                         ),
-                        SizedBox(height: 3.h,),
+                        SizedBox(height: 1.h,),
+                        Text(tr('client_name'),style: textStyle,textAlign: TextAlign.center),
+                        SizedBox(height: 1.h,),
+                        Container(
+                          width: 72.w,
+                          decoration: const BoxDecoration(
+                              color: textFieldColor,
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(17),
+                                  topLeft: Radius.circular(17),
+                                  bottomRight: Radius.circular(17)
+                              )
+                          ),
+                          child: const MyTextFormFieldWidget(
+                            style: TextStyle(fontSize: 23,color: Colors.grey),
+                            type: TextInputType.number,
+                            color: Colors.white,
+                            isPass: false,),
+                        ),
+                        SizedBox(height: 1.h,),
+                        Text(tr('client_phone'),style: textStyle,textAlign: TextAlign.center),
+                        SizedBox(height: 1.h,),
+                        Container(
+                          width: 72.w,
+                          decoration: const BoxDecoration(
+                              color: textFieldColor,
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(17),
+                                  topLeft: Radius.circular(17),
+                                  bottomRight: Radius.circular(17)
+                              )
+                          ),
+                          child: const MyTextFormFieldWidget(
+                            style: TextStyle(fontSize: 23,color: Colors.grey),
+                            type: TextInputType.number,
+                            color: Colors.white,
+                            isPass: false,),
+                        ),
+                        SizedBox(height: 1.h,),
+                        Text(tr('upload'),style: textStyle,textAlign: TextAlign.center),
+                        SizedBox(height: 1.h,),
+                        Row(
+                          children: [
+                            buildImagePicker(image: image),
+                            InkWell(
+                              onTap: () => pickImage(),
+                              child: SizedBox(
+                                height: 20.h,
+                                width: 70.w,
+                                child: Image.asset(
+                                  'assets/images/Group 46.png',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 1.h,),
                         MyButtonWidget(
-                            btnTxt: tr('next'),
+                            btnTxt: tr('send'),
                             btnWidth: 78.w,
                             btnHeight: 5.h,
-                            onPressed: () => Navigator.pushNamed(context, otp),
+                            onPressed: () {},
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
@@ -175,6 +175,58 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
       )),
+    );
+  }
+
+  File? image;
+
+  Future pickImage() async {
+    try {
+      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (image == null) return;
+      final imageTemporary = File(image.path);
+      setState(() => this.image = imageTemporary);
+    } on PlatformException catch (e) {
+      print('failed to pick image: $e');
+    }
+  }
+
+  Widget buildImagePicker({File? image}) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0, right: 10.0, bottom: 10.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: image != null
+                ? Image.file(
+              image,
+              width: 90,
+              height: 90,
+              fit: BoxFit.cover,
+            )
+                : Container(),
+          ),
+        ),
+        Positioned(
+          right: 4.0,
+          top: 0.0,
+          child: InkWell(
+            onTap: () {},
+            child: Material(
+                color: buttonColor,
+                shape: const CircleBorder(),
+                child: image != null
+                    ? const Icon(
+                  Icons.close,
+                  color: Colors.white,
+                  size: 20,
+                )
+                    : Container()),
+          ),
+        ),
+      ],
     );
   }
 }

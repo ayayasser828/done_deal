@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../bussiness logic/nav_bar_bottom/nav_bar_cubit.dart';
 import '../../../constant/colors.dart';
@@ -22,8 +23,8 @@ class NavBarBottom extends StatelessWidget {
           return Scaffold(
             backgroundColor: white,
             floatingActionButton: Container(
-              width: width*0.9,
-              height: height*0.08,
+              width: 90.w,
+              height: 8.h,
               decoration: BoxDecoration(
                 color: grey,
                 gradient: navBarGradient,
@@ -40,7 +41,6 @@ class NavBarBottom extends StatelessWidget {
               ),
             ),
             body: cubit.screens[cubit.currentIndex],
-
           );
         });
   }

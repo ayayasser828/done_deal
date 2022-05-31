@@ -4,6 +4,7 @@ import 'package:done_deal/constant/strings.dart';
 import 'package:done_deal/constant/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sizer/sizer.dart';
 
 Widget homeCard(BuildContext context){
   var width = MediaQuery.of(context).size.width;
@@ -22,25 +23,25 @@ Widget homeCard(BuildContext context){
               child: Row(
                 children: [
                   Container(
-                    width: width*0.21,
-                    height: height*0.025,
+                    width: 21.w,
+                    height: 2.5.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.black38
                     ),
                     child: Center(child: Text('Furnitured',style: textStyle.copyWith(color: white,fontSize: 12),)),
                   ),
-                  SizedBox(width: width*0.008,),
+                  SizedBox(width: 0.8.w,),
                   Container(
-                    width: width*0.21,
-                    height: height*0.025,
+                    width: 21.w,
+                    height: 2.5.h,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.black38
                     ),
                     child: Center(child: Text('Pet Friendly',style: textStyle.copyWith(color: white,fontSize: 12),)),
                   ),
-                  SizedBox(width: width*0.32,),
+                  SizedBox(width: 32.w,),
                   const Icon(Icons.bookmark_border_rounded,color: white,)
                 ],
               ),

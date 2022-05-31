@@ -1,5 +1,7 @@
 import 'package:done_deal/UI/screens/Nav%20Bar/home_screen.dart';
 import 'package:done_deal/UI/screens/Nav%20Bar/notification_screen.dart';
+import 'package:done_deal/UI/screens/Nav%20Bar/profile_screen.dart';
+import 'package:done_deal/UI/screens/Nav%20Bar/fav_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,8 +16,8 @@ class NavBarCubit extends Cubit<NavBarState> {
   int currentIndex = 0;
   List<Widget> screens = [
     const HomeScreen(),
-    const HomeScreen(),
-    const HomeScreen(),
+    const FavoritesScreen(),
+    const ProfileScreen(),
     const NotificationScreen(),
   ];
   List<BottomNavigationBarItem> bottomItems = [
@@ -42,9 +44,9 @@ class NavBarCubit extends Cubit<NavBarState> {
     if (currentIndex == 1) {
       const HomeScreen();
     } else if (currentIndex == 2) {
-      const HomeScreen();
+      const FavoritesScreen();
     } else if (currentIndex == 3) {
-      const HomeScreen();
+      const ProfileScreen();
     } else if (currentIndex == 4) {
       const NotificationScreen();
     }
