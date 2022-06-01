@@ -15,23 +15,33 @@ class WalkThroughScreen extends StatefulWidget {
 }
 
 class _WalkThroughScreenState extends State<WalkThroughScreen> {
-  static final List<String> imgList = [
+  List<String> imgList = [
     'assets/images/walk.svg',
     'assets/images/walk.svg',
     'assets/images/walk.svg',
   ];
-  static final List<String> titleList = [
+  List<String> titleList = [
     tr('on_boarding_title'),
     tr('on_boarding_title'),
     tr('on_boarding_title'),
   ];
-  static final List<String> textList = [
+  List<String> textList = [
     tr('on_boarding_text'),
     tr('on_boarding_text'),
     tr('on_boarding_text'),
   ];
 
-  static int index = 0;
+  int index = 0;
+
+  @override
+  void initState() {
+    print(imgList[0]);
+    print(titleList[0]);
+    print(textList[0]);
+    print(index);
+    super.initState();
+  }
+
   CarouselController buttonCarouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
@@ -113,7 +123,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                 }
               ),),
             SizedBox(
-                width: 15.w,
+                width: 18.w,
                 height: 7.h,
                 child: ListView.separated(
                   itemBuilder: (BuildContext context, int itemIndex) {
@@ -128,7 +138,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                     );
                   },
                   separatorBuilder: (context, index) => const SizedBox(
-                    height: 10,
+                    width: 0,
                   ),
                   itemCount: imgList.length,
                   scrollDirection: Axis.horizontal,
