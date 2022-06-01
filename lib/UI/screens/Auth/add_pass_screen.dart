@@ -33,7 +33,7 @@ class AddPassScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('add_pass'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('add_pass'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 4.h,),
               SizedBox(
                 width: 85.w,
@@ -68,7 +68,7 @@ class AddPassScreen extends StatelessWidget {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -87,7 +87,7 @@ class AddPassScreen extends StatelessWidget {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -100,7 +100,7 @@ class AddPassScreen extends StatelessWidget {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                         SizedBox(height: 5.h,),
                       ],

@@ -6,23 +6,28 @@ Widget chatCard(BuildContext context){
   var width = MediaQuery.of(context).size.width;
   var height = MediaQuery.of(context).size.height;
   return Row(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      const CircleAvatar(
-        radius: 30,
-        backgroundImage: AssetImage('assets/images/avatar.png',),
-      ),
-      SizedBox(width: 3.w,),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
+      Row(
         children: [
-          const Text('Maryam',style: textStyle3,),
-          SizedBox(height: 1.h,),
-          const Text('Sound good'),
+          const CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage('assets/images/avatar.png',),
+          ),
+          SizedBox(width: 3.w,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text('Maryam',style: textStyle3,),
+              SizedBox(height: 1.h,),
+              const Text('Sound good'),
+            ],
+          ),
         ],
       ),
-      SizedBox(width: 40.w,),
-      const Text('16:30',style: textStyle3,),
+      Text('16:30',style: textStyle3,),
     ],
   );
 }

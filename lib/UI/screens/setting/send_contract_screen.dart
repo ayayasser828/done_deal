@@ -46,7 +46,7 @@ class _SendContractState extends State<SendContract> {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('send_con'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('send_con'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
@@ -114,7 +114,7 @@ class _SendContractState extends State<SendContract> {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -140,20 +140,15 @@ class _SendContractState extends State<SendContract> {
                         SizedBox(height: 1.h,),
                         Text(tr('upload'),style: textStyle,textAlign: TextAlign.center),
                         SizedBox(height: 1.h,),
-                        Row(
-                          children: [
-                            buildImagePicker(image: image),
-                            InkWell(
-                              onTap: () => pickImage(),
-                              child: SizedBox(
-                                height: 20.h,
-                                width: 70.w,
-                                child: Image.asset(
-                                  'assets/images/Group 46.png',
-                                ),
-                              ),
-                            ),
-                          ],
+                        InkWell(
+                          onTap: () => pickImage(),
+                          child: SizedBox(
+                            height: 20.h,
+                            width: 70.w,
+                            child: image != null ? Image.asset(
+                              'assets/images/Group 46.png',
+                            ) : buildImagePicker(image: image),
+                          ),
                         ),
                         SizedBox(height: 1.h,),
                         MyButtonWidget(
@@ -164,7 +159,7 @@ class _SendContractState extends State<SendContract> {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                       ],
                     ),

@@ -13,6 +13,7 @@ import 'package:done_deal/UI/screens/setting/chats_screen.dart';
 import 'package:done_deal/UI/screens/Nav%20Bar/fav_screen.dart';
 import 'package:done_deal/UI/screens/setting/send_contract_screen.dart';
 import 'package:done_deal/UI/screens/setting/transaction_screen.dart';
+import 'package:done_deal/UI/screens/splash_screen.dart';
 import 'package:done_deal/bussiness%20logic/nav_bar_bottom/nav_bar_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,6 +24,8 @@ class AppRouter {
     switch (settings.name) {
       case start:
         return MaterialPageRoute(builder: (_) => const WalkThroughScreen());
+      case splash:
+        return MaterialPageRoute(builder: (_) => const SplashScreen());
       case login:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case register:

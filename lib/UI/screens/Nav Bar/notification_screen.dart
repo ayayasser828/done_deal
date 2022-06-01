@@ -14,7 +14,7 @@ class NotificationScreen extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: background2,
       body: Center(
         child: Container(
           width: 80.w,
@@ -35,7 +35,7 @@ class NotificationScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/icons/profile.svg',fit: BoxFit.scaleDown,),
-                  SizedBox(width: 1.w,),
+                  SizedBox(width: 3.w,),
                   Text(tr('notify'),style: textStyle.copyWith(color: Colors.black),textAlign: TextAlign.center),
                 ],
               ),
@@ -50,7 +50,7 @@ class NotificationScreen extends StatelessWidget {
                     children: [
                       SvgPicture.asset('assets/icons/notify.svg',fit: BoxFit.scaleDown,),
                       SizedBox(width: 1.w,),
-                      Expanded(child: Text('The balance has been successfully credited',style: textStyle.copyWith(color: Colors.black,fontSize: 12),textAlign: TextAlign.center,maxLines: 1,)),
+                      Expanded(child: Text('The balance has been successfully credited',style: textStyle.copyWith(color: Colors.black,fontSize: 11.sp),textAlign: TextAlign.center,maxLines: 1,)),
                     ],
                   );
                 }, separatorBuilder: (context, index) => const SizedBox(

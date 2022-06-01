@@ -38,13 +38,13 @@ class MyTextFormFieldWidget extends StatelessWidget {
         focusColor: color,
         fillColor: color,
         contentPadding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-        //border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: color,width: 1.3)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: Colors.transparent,width: 1.3)),
         enabledBorder: OutlineInputBorder(borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(17),
             topLeft: Radius.circular(17),
             bottomRight: Radius.circular(17)
         ),borderSide: BorderSide(color: color,width: 1.3)),
-        //focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: color,width: 1.3)),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),borderSide: BorderSide(color: Colors.transparent,width: 1.3)),
         prefixIcon: icon
       ),
     );

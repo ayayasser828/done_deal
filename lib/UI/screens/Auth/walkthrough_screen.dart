@@ -95,7 +95,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
                   ),
                   Text(
                     titleList[itemIndex],
-                    style: textStyle.copyWith(fontSize: 20),
+                    style: textStyle.copyWith(fontSize: 20.sp),
                   ),
                   SizedBox(
                     height: 3.h,

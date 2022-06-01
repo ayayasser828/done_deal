@@ -45,7 +45,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('register_acc'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('register_acc'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 4.h,),
               SizedBox(
                 width: 85.w,
@@ -80,7 +80,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -164,7 +164,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                       ],
                     ),

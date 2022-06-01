@@ -1,5 +1,6 @@
 const start = '/';
 const login = '/login';
+const splash = '/splash';
 const register = '/register';
 const otp = '/otp';
 const addPass = '/add_pass';

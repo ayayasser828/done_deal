@@ -33,7 +33,7 @@ class ChangePassScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('change_pass'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('change_pass'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
@@ -68,7 +68,7 @@ class ChangePassScreen extends StatelessWidget {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -87,7 +87,7 @@ class ChangePassScreen extends StatelessWidget {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -106,7 +106,7 @@ class ChangePassScreen extends StatelessWidget {
                           ),
                           child: const MyTextFormFieldWidget(
                             style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
+                            type: TextInputType.name,
                             color: Colors.white,
                             isPass: false,),
                         ),
@@ -119,7 +119,7 @@ class ChangePassScreen extends StatelessWidget {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                         SizedBox(height: 5.h,),
                       ],

@@ -16,7 +16,7 @@ class OTPPassScreen extends StatelessWidget {
 
   void onEnd() {
     Row(
-      children: const [
+      children: [
         Icon(
           Icons.refresh,
           color: buttonColor,
@@ -51,7 +51,7 @@ class OTPPassScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 4.h,),
-              Text(tr('otp_pass'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('otp_pass'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 4.h,),
               SizedBox(
                 width: 85.w,
@@ -74,7 +74,7 @@ class OTPPassScreen extends StatelessWidget {
                         SizedBox(height: 1.h,),
                         Text(tr('enter')),
                         SizedBox(height: 1.h,),
-                        const Center(child: Text('+201033076500',style: textStyle,textAlign: TextAlign.center)),
+                        Center(child: Text('+201033076500',style: textStyle,textAlign: TextAlign.center)),
                         SizedBox(height: 3.h,),
                         SizedBox(width: width*0.8,height: height*0.1,child: buildPinCodeFields(context),),
                         MyButtonWidget(
@@ -85,7 +85,7 @@ class OTPPassScreen extends StatelessWidget {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                       ],
                     ),

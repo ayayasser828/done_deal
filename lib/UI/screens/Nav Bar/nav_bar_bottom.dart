@@ -22,22 +22,24 @@ class NavBarBottom extends StatelessWidget {
           NavBarCubit cubit = NavBarCubit.get(context);
           return Scaffold(
             backgroundColor: white,
-            floatingActionButton: Container(
-              width: 90.w,
-              height: 8.h,
-              decoration: BoxDecoration(
-                color: grey,
-                gradient: navBarGradient,
-                borderRadius: BorderRadius.circular(20)
-              ),
-              child: BottomNavigationBar(
-                elevation: 0,
-                backgroundColor: grey,
-                items: cubit.bottomItems,
-                onTap: cubit.changeBottomNav,
-                currentIndex: cubit.currentIndex,
-                selectedItemColor: buttonColor,
-                unselectedItemColor: grey,
+            floatingActionButton: ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Container(
+                width: 90.w,
+                height: 8.h,
+                decoration: BoxDecoration(
+                  color: grey,
+                  gradient: navBarGradient,
+                ),
+                child: BottomNavigationBar(
+                  elevation: 0,
+                  backgroundColor: grey,
+                  items: cubit.bottomItems,
+                  onTap: cubit.changeBottomNav,
+                  currentIndex: cubit.currentIndex,
+                  selectedItemColor: buttonColor,
+                  unselectedItemColor: grey,
+                ),
               ),
             ),
             body: cubit.screens[cubit.currentIndex],

@@ -43,7 +43,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: background2,
       body: Center(
         child: Container(
           width: 80.w,
@@ -69,15 +69,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     fit: BoxFit.scaleDown,
                   ),
                   SizedBox(
-                    width: 1.w,
+                    width: 3.w,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(tr('acc'),
                           style: textStyle.copyWith(color: Colors.black),
                           textAlign: TextAlign.center),
-                      const Text('10000 Egp',
-                          style: textStyle, textAlign: TextAlign.center),
+                      Text('10000 Egp',
+                          style: textStyle.copyWith(fontSize: 13.sp), textAlign: TextAlign.center),
                     ],
                   ),
                 ],
@@ -86,7 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 4.h,
               ),
               SizedBox(
-                height: 40.h,
+                height: 50.h,
                 width: 70.w,
                 child: Column(
                   children: [
@@ -105,7 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('trans'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){
@@ -114,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 3.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,7 +133,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('send_con'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){
@@ -140,7 +142,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 3.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -157,7 +159,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('chat'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){
@@ -166,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 3.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -183,7 +185,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('change_pass'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){
@@ -192,7 +194,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 3.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -209,7 +211,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('change_lang'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){
@@ -218,7 +220,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                     SizedBox(
-                      height: 1.h,
+                      height: 3.h,
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -235,7 +237,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             tr('log'),
                             style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 16),
+                                color: Colors.black, fontSize: 14.sp),
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),onTap: (){

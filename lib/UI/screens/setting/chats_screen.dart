@@ -29,12 +29,12 @@ class ChatsScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 2.h,),
-            Text(tr('chat'),style: textStyle.copyWith(fontSize: 20),),
+            Text(tr('chat'),style: textStyle.copyWith(fontSize: 20.sp),),
             SizedBox(height: 2.h,),
             Center(
               child: SizedBox(
                 height: 75.h,
-                width: 90.w,
+                width: 85.w,
                 child: ListView.separated(
                     itemBuilder: (BuildContext context, int index) {
                       return chatCard(context);

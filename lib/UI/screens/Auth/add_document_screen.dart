@@ -39,7 +39,7 @@ class _AddDocScreenState extends State<AddDocScreen> {
                 ],
               ),
               SizedBox(height: 2.h,),
-              Text(tr('doc'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('doc'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
@@ -61,20 +61,15 @@ class _AddDocScreenState extends State<AddDocScreen> {
                       children: [
                         Text(tr('id'),style: textStyle.copyWith(color: Colors.black),textAlign: TextAlign.center),
                         SizedBox(height: 3.h,),
-                        Row(
-                          children: [
-                            buildImagePicker(image: image),
-                            InkWell(
-                              onTap: () => pickImage(),
-                              child: SizedBox(
-                                height: 20.h,
-                                width: 70.w,
-                                child: Image.asset(
-                                  'assets/images/drag-drop-upload-1.png',
-                                ),
-                              ),
-                            ),
-                          ],
+                        InkWell(
+                          onTap: () => pickImage(),
+                          child: SizedBox(
+                            height: 20.h,
+                            width: 70.w,
+                            child: image == null ? Image.asset(
+                              'assets/images/drag-drop-upload-1.png',
+                            ) : buildImagePicker(image: image),
+                          ),
                         ),
                         SizedBox(height: 7.h,),
                         MyButtonWidget(
@@ -85,7 +80,7 @@ class _AddDocScreenState extends State<AddDocScreen> {
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,
-                            textSize: 16,
+                            textSize: 15.sp,
                             textColor: Colors.white),
                         SizedBox(height: 5.h,),
                       ],

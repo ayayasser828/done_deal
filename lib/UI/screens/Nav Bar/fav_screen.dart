@@ -21,7 +21,7 @@ class FavoritesScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: 4.h,),
-              Text(tr('fav'),style: textStyle.copyWith(fontSize: 20),),
+              Text(tr('fav'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 4.h,),
               Center(
                 child: SizedBox(

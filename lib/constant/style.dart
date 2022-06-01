@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:done_deal/constant/colors.dart';
+import 'package:sizer/sizer.dart';
 
-const TextStyle textStyle = TextStyle(color: textColor,fontSize: 16,fontWeight: FontWeight.w600);
-const TextStyle textStyle2 = TextStyle(color: buttonColor,fontSize: 16,fontWeight: FontWeight.w600);
-const TextStyle textStyle3 = TextStyle(fontSize: 18,fontWeight: FontWeight.w400);
+TextStyle textStyle = TextStyle(color: textColor,fontSize: 14.sp,fontWeight: FontWeight.w600);
+TextStyle textStyle2 = TextStyle(color: buttonColor,fontSize: 14.sp,fontWeight: FontWeight.w600);
+TextStyle textStyle3 = TextStyle(fontSize: 14.sp,fontWeight: FontWeight.w400);

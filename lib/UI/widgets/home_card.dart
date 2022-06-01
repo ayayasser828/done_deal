@@ -29,7 +29,7 @@ Widget homeCard(BuildContext context){
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.black38
                     ),
-                    child: Center(child: Text('Furnitured',style: textStyle.copyWith(color: white,fontSize: 12),)),
+                    child: Center(child: Text('Furnitured',style: textStyle.copyWith(color: white,fontSize: 10.sp),)),
                   ),
                   SizedBox(width: 0.8.w,),
                   Container(
@@ -39,7 +39,7 @@ Widget homeCard(BuildContext context){
                         borderRadius: BorderRadius.circular(15),
                         color: Colors.black38
                     ),
-                    child: Center(child: Text('Pet Friendly',style: textStyle.copyWith(color: white,fontSize: 12),)),
+                    child: Center(child: Text('Pet Friendly',style: textStyle.copyWith(color: white,fontSize: 10.sp),)),
                   ),
                   SizedBox(width: 32.w,),
                   const Icon(Icons.bookmark_border_rounded,color: white,)
@@ -53,15 +53,15 @@ Widget homeCard(BuildContext context){
           child: RichText(
             text: TextSpan(
               children: <TextSpan>[
-                TextSpan(text: 'Egp 23,456',style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 20)),
-                TextSpan(text: '  Studio Apartment',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
+                TextSpan(text: 'Egp 23,456',style: textStyle.copyWith(color: Colors.black,fontWeight: FontWeight.w400,fontSize: 17.sp)),
+                TextSpan(text: '  Studio Apartment',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 10.sp),),
               ],
             ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: Text('23 Cross, HRBR Layout, Bangalore',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
+          child: Text('23 Cross, HRBR Layout, Bangalore',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 12.sp),),
         ),
         SizedBox(height: height*0.03,),
         Row(
@@ -69,11 +69,11 @@ Widget homeCard(BuildContext context){
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SvgPicture.asset('assets/icons/bed.svg'),
-            Text('3 Bed',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
+            Text('3 Bed',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 13.sp),),
             SvgPicture.asset('assets/icons/bath.svg'),
-            Text('3 Bath',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
+            Text('3 Bath',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 13.sp),),
             SvgPicture.asset('assets/icons/car.svg'),
-            Text('3 Parking',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 15),),
+            Text('3 Parking',style: textStyle.copyWith(color: Colors.black45,fontWeight: FontWeight.w400,fontSize: 13.sp),),
           ],
         )
       ],

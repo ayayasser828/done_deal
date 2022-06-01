@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 Image.asset('assets/images/Logo 01.png',fit: BoxFit.scaleDown,),
                 SizedBox(height: 4.h,),
-                Text(tr('welcome'),style: textStyle.copyWith(fontSize: 20),),
+                Text(tr('welcome'),style: textStyle.copyWith(fontSize: 20.sp),),
                 SizedBox(height: 2.h,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 60.0),
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                             ),
                             child: const MyTextFormFieldWidget(
                               style: TextStyle(fontSize: 23,color: Colors.grey),
-                              type: TextInputType.number,
+                              type: TextInputType.name,
                               color: Colors.white,
                               isPass: false,),
                           ),
@@ -92,8 +92,8 @@ class LoginScreen extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               children: <TextSpan>[
-                                TextSpan(text: tr('forget'),style: textStyle.copyWith(fontSize: 10),),
-                                TextSpan(text: tr('reset'),style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
+                                TextSpan(text: tr('forget'),style: textStyle.copyWith(fontSize: 10.sp),),
+                                TextSpan(text: tr('reset'),style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),),
                               ],
                             ),
                           ),
@@ -106,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                               color: buttonColor,
                               borderColor: buttonColor,
                               weight: FontWeight.w600,
-                              textSize: 16,
+                              textSize: 15.sp,
                               textColor: Colors.white),
                           SizedBox(height: 5.h,),
                           InkWell(
@@ -117,8 +117,8 @@ class LoginScreen extends StatelessWidget {
                               child: RichText(
                                 text: TextSpan(
                                   children: <TextSpan>[
-                                    TextSpan(text: tr('have_acc'),style: textStyle.copyWith(fontSize: 10),),
-                                    TextSpan(text: tr('register'),style: textStyle.copyWith(fontSize: 10,color: buttonColor),),
+                                    TextSpan(text: tr('have_acc'),style: textStyle.copyWith(fontSize: 10.sp),),
+                                    TextSpan(text: tr('register'),style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),),
                                   ],
                                 ),
                               ),

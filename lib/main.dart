@@ -1,10 +1,20 @@
+import 'package:done_deal/constant/colors.dart';
+import 'package:done_deal/constant/strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import 'app_router.dart';
 
-void main() {
+int? initScreen;
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  initScreen = await prefs.getInt("initScreen");
+  await prefs.setInt("initScreen", 1);
+  print('initScreen ${initScreen}');
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('ar', 'EG')],
       path: 'assets/lang',
@@ -30,9 +40,10 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Flutter Demo',
-          theme: ThemeData(),
+          theme: ThemeData(backgroundColor: background1),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRouts,
+          initialRoute: initScreen == 0 || initScreen == null ? start : splash,
         );
       }
     );

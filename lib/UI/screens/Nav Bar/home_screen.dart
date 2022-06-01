@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                             bottomRight: Radius.circular(17))),
                     child: MyTextFormFieldWidget(
                       style: const TextStyle(fontSize: 16, color: Colors.grey),
-                      type: TextInputType.number,
+                      type: TextInputType.name,
                       hint: tr('search'),
                       icon: SvgPicture.asset(
                         'assets/icons/search.svg',

@@ -40,10 +40,10 @@ class TransactionScren extends StatelessWidget {
               ),
               Text(
                 tr('trans'),
-                style: textStyle.copyWith(fontSize: 20),
+                style: textStyle.copyWith(fontSize: 20.sp),
               ),
               SizedBox(
-                height: 4.h,
+                height: 3.h,
               ),
               SizedBox(
                 width: 85.w,
@@ -63,7 +63,7 @@ class TransactionScren extends StatelessWidget {
                           return transactionCard(context);
                         },
                         separatorBuilder: (context, index) => const SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
                         scrollDirection: Axis.vertical,
                         itemCount: 10),
