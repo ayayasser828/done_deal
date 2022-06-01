@@ -26,7 +26,7 @@ class NavBarBottom extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: Container(
                 width: 90.w,
-                height: 8.h,
+                height: 8.1.h,
                 decoration: BoxDecoration(
                   color: grey,
                   gradient: navBarGradient,

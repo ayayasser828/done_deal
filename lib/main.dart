@@ -2,6 +2,7 @@ import 'package:done_deal/constant/colors.dart';
 import 'package:done_deal/constant/strings.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Flutter Demo',
-          theme: ThemeData(backgroundColor: background1),
+          theme: _buildTheme(Brightness.light),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRouts,
           initialRoute: initScreen == 0 || initScreen == null ? start : splash,
@@ -48,4 +49,11 @@ class MyApp extends StatelessWidget {
       }
     );
   }
+}
+ThemeData _buildTheme(brightness) {
+  var baseTheme = ThemeData(brightness: brightness);
+
+  return baseTheme.copyWith(
+    textTheme: GoogleFonts.amiriTextTheme(baseTheme.textTheme),
+  );
 }

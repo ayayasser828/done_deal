@@ -45,12 +45,12 @@ class _SendContractState extends State<SendContract> {
                   )
                 ],
               ),
-              SizedBox(height: 4.h,),
+              SizedBox(height: 2.h,),
               Text(tr('send_con'),style: textStyle.copyWith(fontSize: 20.sp),),
               SizedBox(height: 2.h,),
               SizedBox(
                 width: 85.w,
-                height: 73.h,
+                height: 74.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -139,13 +139,12 @@ class _SendContractState extends State<SendContract> {
                         ),
                         SizedBox(height: 1.h,),
                         Text(tr('upload'),style: textStyle,textAlign: TextAlign.center),
-                        SizedBox(height: 1.h,),
                         InkWell(
                           onTap: () => pickImage(),
                           child: SizedBox(
                             height: 20.h,
                             width: 70.w,
-                            child: image != null ? Image.asset(
+                            child: image == null ? Image.asset(
                               'assets/images/Group 46.png',
                             ) : buildImagePicker(image: image),
                           ),

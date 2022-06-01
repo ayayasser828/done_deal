@@ -110,7 +110,7 @@ class ChangePassScreen extends StatelessWidget {
                             color: Colors.white,
                             isPass: false,),
                         ),
-                        SizedBox(height: 10.h,),
+                        SizedBox(height: 8.h,),
                         MyButtonWidget(
                             btnTxt: tr('change'),
                             btnWidth: 78.w,
@@ -121,7 +121,7 @@ class ChangePassScreen extends StatelessWidget {
                             weight: FontWeight.w600,
                             textSize: 15.sp,
                             textColor: Colors.white),
-                        SizedBox(height: 5.h,),
+                        SizedBox(height: 4.h,),
                       ],
                     ),
                   )),

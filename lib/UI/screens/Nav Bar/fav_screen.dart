@@ -25,11 +25,11 @@ class FavoritesScreen extends StatelessWidget {
               SizedBox(height: 4.h,),
               Center(
                 child: SizedBox(
-                  height: 85.h,
+                  height: 80.h,
                   width: width,
                   child: ListView.separated(
                       itemBuilder: (BuildContext context, int index) {
-                        return homeCard(context);
+                        return HomeCard();
                       },
                       separatorBuilder: (context, index) => const SizedBox(
                         height: 30,
@@ -37,7 +37,8 @@ class FavoritesScreen extends StatelessWidget {
                       scrollDirection: Axis.vertical,
                       itemCount: 5),
                 ),
-              )
+              ),
+              SizedBox(height: 4.h,),
             ],
           ),
         ),

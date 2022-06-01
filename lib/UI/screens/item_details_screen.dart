@@ -29,6 +29,8 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
 
   bool request = false;
 
+  bool isFav = false;
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -66,9 +68,13 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Icon(Icons.arrow_back_ios,color: white,size: 30,),
-                        Icon(Icons.bookmark_border_rounded,color: white,size: 30,)
+                      children: [
+                        IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios,color: white,size: 30,)),
+                        IconButton(onPressed: (){
+                          setState(() {
+                            isFav = !isFav;
+                          });
+                        }, icon: Icon(isFav ? Icons.bookmark : Icons.bookmark_border_rounded,color: isFav ? Colors.red : white,size: 30,))
                       ],
                     ),
                   ),
