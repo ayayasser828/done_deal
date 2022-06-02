@@ -1,4 +1,5 @@
 import 'package:done_deal/UI/widgets/transaction_card.dart';
+import 'package:done_deal/constant/colors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -60,7 +61,19 @@ class TransactionScren extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 15.0),
                     child: ListView.separated(
                         itemBuilder: (BuildContext context, int index) {
-                          return transactionCard(context);
+                          return Column(
+                            children: [
+                              transactionCard(context),
+                              SizedBox(
+                                height: 1.h,
+                              ),
+                              Container(
+                                width: 75.w,
+                                height: 0.1.h,
+                                color: buttonColor,
+                              )
+                            ],
+                          );
                         },
                         separatorBuilder: (context, index) => const SizedBox(
                               height: 20,

@@ -20,6 +20,9 @@ Widget transactionCard(BuildContext context){
               ],
             ),
           ),
+          SizedBox(
+            height: 0.8.h,
+          ),
           RichText(
             text: TextSpan(
               children: <TextSpan>[

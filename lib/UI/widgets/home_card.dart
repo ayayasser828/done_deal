@@ -31,7 +31,7 @@ class _HomeCardState extends State<HomeCard> {
             children: [
               Image.asset('assets/images/3.png',width: width,),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.only(top: 10.0,left: 18),
                 child: Row(
                   children: [
                     Container(

@@ -79,7 +79,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           style: textStyle.copyWith(color: Colors.black),
                           textAlign: TextAlign.center),
                       Text('10000 Egp',
-                          style: textStyle.copyWith(fontSize: 13.sp), textAlign: TextAlign.center),
+                          style: textStyle.copyWith(fontSize: 13.sp),
+                          textAlign: TextAlign.center),
                     ],
                   ),
                 ],
@@ -88,166 +89,178 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 4.h,
               ),
               SizedBox(
-                height: 50.h,
-                width: 70.w,
-                child: Column(
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
-                        ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        InkWell(
-                          child: Text(
-                            tr('trans'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
+                  height: 50.h,
+                  width: 70.w,
+                  child: Column(
+                    children: [
+                      InkWell(
+                        onTap: () {
                           Navigator.pushNamed(context, trans);
-                        },),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('trans'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        InkWell(
-                          child: Text(
-                            tr('send_con'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
                           Navigator.pushNamed(context, sendContract);
-                        },),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('send_con'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        InkWell(
-                          child: Text(
-                            tr('chat'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
                           Navigator.pushNamed(context, chat);
-                        },),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('chat'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        InkWell(
-                          child: Text(
-                            tr('change_pass'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
                           Navigator.pushNamed(context, changePass);
-                        },),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('change_pass'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 3.w,
-                        ),
-                        InkWell(
-                          child: Text(
-                            tr('change_lang'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
                           return changeLang(context);
-                        },),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 3.h,
-                    ),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/icons/notify.svg',
-                          fit: BoxFit.scaleDown,
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('change_lang'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        SizedBox(
-                          width: 3.w,
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, login, (route) => false);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('log'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
                         ),
-                        InkWell(
-                          child: Text(
-                            tr('log'),
-                            style: textStyle.copyWith(
-                                color: Colors.black, fontSize: 14.sp),
-                            textAlign: TextAlign.center,
-                            maxLines: 1,
-                          ),onTap: (){
-                          Navigator.pushNamedAndRemoveUntil(context, login, (route) => false);
-                        },),
-                      ],
-                    ),
-                  ],
-                )
-              ),
+                      ),
+                    ],
+                  )),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -293,49 +306,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
   }
+
   void changeLang(BuildContext context) {
     showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-          content: Text(
-            tr('change_lang'),
-            style:
-            const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          ),
-          backgroundColor: white,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(15.0))),
-          actions: [
-            Center(
-              child: FlatButton(
-                  onPressed: () {
-                    if (context.locale.languageCode == 'ar') {
-                      GetLAng.lang = 'en_US';
-                      context.setLocale(const Locale('en', 'US'));
-                    } else {
-                      GetLAng.lang = 'ar_EG';
-                      context.setLocale(const Locale('ar', 'EG'));
-                    }
-                    Navigator.of(context).pop();
-                  },
-                  child: Container(
-                    height: 40,
-                    width: 100,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: buttonColor,
-                    ),
-                    child: Center(
-                        child: Text(
-                            context.locale.languageCode == 'ar'
-                                ? 'ENGLISH'
-                                : "عربي",
-                            style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,color: white))),
-                  )),
-            )
-          ],
-        ));
+              content: Text(
+                tr('change_lang'),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              backgroundColor: white,
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
+              actions: [
+                Center(
+                  child: FlatButton(
+                      onPressed: () {
+                        if (context.locale.languageCode == 'ar') {
+                          GetLAng.lang = 'en_US';
+                          context.setLocale(const Locale('en', 'US'));
+                        } else {
+                          GetLAng.lang = 'ar_EG';
+                          context.setLocale(const Locale('ar', 'EG'));
+                        }
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        height: 40,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: buttonColor,
+                        ),
+                        child: Center(
+                            child: Text(
+                                context.locale.languageCode == 'ar'
+                                    ? 'ENGLISH'
+                                    : "عربي",
+                                style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: white))),
+                      )),
+                )
+              ],
+            ));
   }
 }

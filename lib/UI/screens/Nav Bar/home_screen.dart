@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  height: 80.h,
+                  height: 75.h,
                   width: width,
                   child: ListView.separated(
                       itemBuilder: (BuildContext context, int index) {
