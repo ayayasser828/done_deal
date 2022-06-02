@@ -1,5 +1,6 @@
 import 'package:done_deal/constant/colors.dart';
 import 'package:done_deal/constant/strings.dart';
+import 'package:done_deal/utils/get_lang.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -14,6 +15,7 @@ int? initScreen;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
+  await GetLAng.getLang();
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('ar', 'EG')],
       path: 'assets/lang',
