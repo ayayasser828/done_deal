@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../constant/style.dart';
+import '../../../utils/get_lang.dart';
 
 class TransactionScren extends StatelessWidget {
   const TransactionScren({Key? key}) : super(key: key);
@@ -23,9 +24,8 @@ class TransactionScren extends StatelessWidget {
               Row(
                 children: [
                   IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
-                  SizedBox(
-                    width: 10.w,
-                  ),
+                  SizedBox(width: GetLAng.lang == 'en_US'
+                      ? 10.w : 6.w,),
                   SizedBox(
                     width: 50.w,
                     height: 12.h,

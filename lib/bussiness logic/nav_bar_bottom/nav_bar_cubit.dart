@@ -2,6 +2,7 @@ import 'package:done_deal/UI/screens/Nav%20Bar/home_screen.dart';
 import 'package:done_deal/UI/screens/Nav%20Bar/notification_screen.dart';
 import 'package:done_deal/UI/screens/Nav%20Bar/profile_screen.dart';
 import 'package:done_deal/UI/screens/Nav%20Bar/fav_screen.dart';
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,22 +21,18 @@ class NavBarCubit extends Cubit<NavBarState> {
     const ProfileScreen(),
     const NotificationScreen(),
   ];
-  List<BottomNavigationBarItem> bottomItems = [
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.home_filled),
-      label: '',
+  List<FloatingNavbarItem> bottomItems = [
+    FloatingNavbarItem(
+      icon: Icons.home_filled,
     ),
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.bookmark),
-      label: '',
+    FloatingNavbarItem(
+      icon: Icons.bookmark,
     ),
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.person),
-      label: '',
+    FloatingNavbarItem(
+      icon: Icons.person,
     ),
-    const BottomNavigationBarItem(
-      icon: Icon(Icons.notifications),
-      label: '',
+    FloatingNavbarItem(
+      icon: Icons.notifications,
     ),
   ];
 

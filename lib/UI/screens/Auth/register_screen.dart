@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../constant/colors.dart';
 import '../../../constant/style.dart';
+import '../../../utils/get_lang.dart';
 import '../../widgets/drop_down.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
@@ -36,7 +37,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Row(
                 children: [
                   IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
-                  SizedBox(width: 10.w,),
+                  SizedBox(width: GetLAng.lang == 'en_US'
+                      ? 10.w : 6.w,),
                   SizedBox(
                     width: 50.w,
                     height: 12.h,
@@ -106,21 +108,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         SizedBox(height: 1.h,),
                         Text(tr('date'),style: textStyle,textAlign: TextAlign.center),
                         SizedBox(height: 1.h,),
-                        Container(
-                          width: 72.w,
-                          decoration: const BoxDecoration(
-                              color: textFieldColor,
-                              borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(17),
-                                  topLeft: Radius.circular(17),
-                                  bottomRight: Radius.circular(17)
-                              )
-                          ),
-                          child: const MyTextFormFieldWidget(
-                            style: TextStyle(fontSize: 23,color: Colors.grey),
-                            type: TextInputType.number,
-                            color: Colors.white,
-                            isPass: false,),
+                        Stack(
+                          children: [
+                            Container(
+                              width: 72.w,
+                              decoration: const BoxDecoration(
+                                  color: textFieldColor,
+                                  borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(17),
+                                      topLeft: Radius.circular(17),
+                                      bottomRight: Radius.circular(17)
+                                  )
+                              ),
+                              child: MyTextFormFieldWidget(
+                                style: TextStyle(fontSize: 23,color: Colors.grey),
+                                type: TextInputType.number,
+                                controller: _birthdayController,
+                                color: Colors.white,
+                                isPass: false,),
+                            ),
+                            InkWell(
+                              onTap: _selectDate,
+                              child: Container(
+                                width: double.infinity,
+                                height: height * 0.05,
+                                color: Colors.transparent,
+                              ),
+                            ),
+                          ],
                         ),
                         SizedBox(height: 1.h,),
                         Text(tr('gender'),style: textStyle,textAlign: TextAlign.center),
@@ -176,5 +191,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       )),
     );
+  }
+
+  DateTime? _selectedDate;
+  final TextEditingController _birthdayController = TextEditingController();
+
+  Future<void> _selectDate() async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime(1970, 1),
+      firstDate: DateTime(1970, 1),
+      lastDate: DateTime.now(),
+      initialDatePickerMode: DatePickerMode.year,
+      initialEntryMode: DatePickerEntryMode.calendarOnly,
+    );
+    print(picked);
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        _birthdayController.text =
+            DateFormat('yyyy-MM-dd').format(_selectedDate!);
+      });
+    }
+    print(_selectedDate);
+    print(_birthdayController.text);
   }
 }

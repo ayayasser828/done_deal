@@ -7,6 +7,7 @@ import 'package:sizer/sizer.dart';
 import '../../../constant/colors.dart';
 import '../../../constant/strings.dart';
 import '../../../constant/style.dart';
+import '../../../utils/get_lang.dart';
 import '../../widgets/text_button.dart';
 
 class OTPPassScreen extends StatelessWidget {
@@ -42,7 +43,8 @@ class OTPPassScreen extends StatelessWidget {
               Row(
                 children: [
                   IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
-                  SizedBox(width: 10.w,),
+                  SizedBox(width: GetLAng.lang == 'en_US'
+                      ? 10.w : 6.w,),
                   SizedBox(
                     width: 50.w,
                     height: 12.h,
@@ -55,7 +57,7 @@ class OTPPassScreen extends StatelessWidget {
               SizedBox(height: 4.h,),
               SizedBox(
                 width: 85.w,
-                height: 31.h,
+                height: 37.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -75,7 +77,7 @@ class OTPPassScreen extends StatelessWidget {
                         Text(tr('enter')),
                         SizedBox(height: 1.h,),
                         Center(child: Text('+201033076500',style: textStyle,textAlign: TextAlign.center)),
-                        SizedBox(height: 3.h,),
+                        SizedBox(height: 4.h,),
                         SizedBox(width: width*0.8,height: height*0.1,child: buildPinCodeFields(context),),
                         MyButtonWidget(
                             btnTxt: tr('verify'),

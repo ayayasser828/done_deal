@@ -1,3 +1,4 @@
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -21,26 +22,16 @@ class NavBarBottom extends StatelessWidget {
         builder: (context, state) {
           NavBarCubit cubit = NavBarCubit.get(context);
           return Scaffold(
-            backgroundColor: white,
-            floatingActionButton: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Container(
-                width: 90.w,
-                height: 8.1.h,
-                decoration: BoxDecoration(
-                  color: grey,
-                  gradient: navBarGradient,
-                ),
-                child: BottomNavigationBar(
-                  elevation: 0,
-                  backgroundColor: grey,
-                  items: cubit.bottomItems,
-                  onTap: cubit.changeBottomNav,
-                  currentIndex: cubit.currentIndex,
-                  selectedItemColor: buttonColor,
-                  unselectedItemColor: grey,
-                ),
-              ),
+            backgroundColor: cubit.currentIndex == 0 || cubit.currentIndex == 1 ? background1 : background2,
+            bottomNavigationBar: FloatingNavbar(
+              backgroundColor: white,
+              width: 85.w,
+              items: cubit.bottomItems,
+              onTap: cubit.changeBottomNav,
+              currentIndex: cubit.currentIndex,
+              selectedItemColor: buttonColor,
+              unselectedItemColor: grey,
+              selectedBackgroundColor: Colors.transparent,
             ),
             body: cubit.screens[cubit.currentIndex],
           );

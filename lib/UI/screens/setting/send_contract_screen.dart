@@ -6,6 +6,7 @@ import 'package:sizer/sizer.dart';
 import 'dart:io';
 import '../../../constant/colors.dart';
 import '../../../constant/style.dart';
+import '../../../utils/get_lang.dart';
 import '../../widgets/drop_down.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
@@ -37,7 +38,8 @@ class _SendContractState extends State<SendContract> {
               Row(
                 children: [
                   IconButton(onPressed: ()=> Navigator.pop(context), icon: const Icon(Icons.arrow_back_ios)),
-                  SizedBox(width: 10.w,),
+                  SizedBox(width: GetLAng.lang == 'en_US'
+                      ? 10.w : 6.w,),
                   SizedBox(
                     width: 50.w,
                     height: 12.h,
