@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-          title: 'Flutter Demo',
+          title: 'Done Dell',
           theme: _buildTheme(Brightness.light),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRouts,
