@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../constant/global_variables.dart';
+
 class WalkThroughScreen extends StatefulWidget {
   const WalkThroughScreen({Key? key}) : super(key: key);
 
@@ -35,10 +37,7 @@ class _WalkThroughScreenState extends State<WalkThroughScreen> {
 
   @override
   void initState() {
-    print(imgList[0]);
-    print(titleList[0]);
-    print(textList[0]);
-    print(index);
+    prefs.setInt("initScreen", 1);
     super.initState();
   }
 

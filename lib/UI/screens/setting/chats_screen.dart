@@ -33,7 +33,7 @@ class ChatsScreen extends StatelessWidget {
             SizedBox(height: 2.h,),
             Center(
               child: SizedBox(
-                height: 75.h,
+                height: 74.h,
                 width: 85.w,
                 child: ListView.separated(
                     itemBuilder: (BuildContext context, int index) {

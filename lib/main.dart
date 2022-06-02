@@ -7,15 +7,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import 'app_router.dart';
+import 'constant/global_variables.dart';
 
 int? initScreen;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  initScreen = await prefs.getInt("initScreen");
-  await prefs.setInt("initScreen", 1);
-  print('initScreen ${initScreen}');
+  prefs = await SharedPreferences.getInstance();
   runApp(EasyLocalization(
       supportedLocales: const [Locale('en', 'US'), Locale('ar', 'EG')],
       path: 'assets/lang',
@@ -44,7 +42,7 @@ class MyApp extends StatelessWidget {
           theme: _buildTheme(Brightness.light),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRouts,
-          initialRoute: initScreen == 0 || initScreen == null ? start : splash,
+          //initialRoute: initScreen == 0 || initScreen == null ? start : splash,
         );
       }
     );
