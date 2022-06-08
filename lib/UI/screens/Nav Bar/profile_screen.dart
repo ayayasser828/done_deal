@@ -45,409 +45,262 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: background2,
       body: Center(
-        child: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 10.h, bottom: 10),
-          child: Container(
-            decoration: const BoxDecoration(
-              color: white,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(17),
-                  topLeft: Radius.circular(17),
-                  bottomRight: Radius.circular(17)),
-            ),
-            child: SingleChildScrollView(
-              physics: BouncingScrollPhysics(),
-              child: Column(
+        child: Container(
+          width: 80.w,
+          height: 70.h,
+          decoration: const BoxDecoration(
+            color: white,
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(17),
+                topLeft: Radius.circular(17),
+                bottomRight: Radius.circular(17)),
+          ),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 2.h,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 2.h,
+                  SvgPicture.asset(
+                    'assets/icons/profile.svg',
+                    fit: BoxFit.scaleDown,
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  SizedBox(
+                    width: 3.w,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SvgPicture.asset(
-                        'assets/icons/profile.svg',
-                        fit: BoxFit.scaleDown,
-                      ),
-                      SizedBox(
-                        width: 3.w,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(tr('acc'),
-                              style: textStyle.copyWith(color: Colors.black),
-                              textAlign: TextAlign.center),
-                          Text('10000 Egp',
-                              style: textStyle.copyWith(fontSize: 13.sp),
-                              textAlign: TextAlign.center),
-                        ],
-                      ),
+                      Text(tr('acc'),
+                          style: textStyle.copyWith(color: Colors.black),
+                          textAlign: TextAlign.center),
+                      Text('10000 Egp',
+                          style: textStyle.copyWith(fontSize: 13.sp),
+                          textAlign: TextAlign.center),
                     ],
-                  ),
-                  SizedBox(
-                    height: 4.h,
-                  ),
-                  SizedBox(
-                      width: 70.w,
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, trans);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('trans'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, sendContract);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('send_con'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, chat);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('chat'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamed(context, changePass);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('change_pass'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              return changeLang(context);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('change_lang'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.pushNamedAndRemoveUntil(
-                                  context, login, (route) => false);
-                            },
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/icons/notify.svg',
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                SizedBox(
-                                  width: 3.w,
-                                ),
-                                Text(
-                                  tr('log'),
-                                  style: textStyle.copyWith(
-                                      color: Colors.black, fontSize: 14.sp),
-                                  textAlign: TextAlign.center,
-                                  maxLines: 1,
-                                ),
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraints) {
-                                final boxWidth = constraints.constrainWidth();
-                                const dashWidth = 10.0;
-                                final dashCount =
-                                    (boxWidth / (2 * dashWidth)).floor();
-                                return Flex(
-                                  children: List.generate(dashCount, (_) {
-                                    return SizedBox(
-                                      width: dashWidth,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(color: grey),
-                                      ),
-                                    );
-                                  }),
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  direction: Axis.horizontal,
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      )),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Text(
-                        tr('notify'),
-                        style: textStyle.copyWith(
-                            color: Colors.black, fontSize: 16),
-                        textAlign: TextAlign.center,
-                        maxLines: 1,
-                      ),
-                      Transform(
-                        alignment: Alignment.center,
-                        transform: Matrix4.rotationY(
-                            context.locale.languageCode == 'ar' ? math.pi : 0),
-                        child: FlutterSwitch(
-                          width: 50.0,
-                          height: 27,
-                          value: notify,
-                          borderRadius: 30.0,
-                          showOnOff: false,
-                          activeColor: buttonColor,
-                          inactiveColor: Colors.white,
-                          switchBorder: Border.all(
-                            color: grey,
-                            width: 1.0,
-                          ),
-                          padding: 0,
-                          activeToggleColor: white,
-                          inactiveToggleColor: grey,
-                          onToggle: (v) {
-                            setState(() {
-                              notify = !notify;
-                            });
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 3.h,
                   ),
                 ],
               ),
-            ),
+              SizedBox(
+                height: 4.h,
+              ),
+              SizedBox(
+                  height: 50.h,
+                  width: 70.w,
+                  child: Column(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, trans);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('trans'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, sendContract);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('send_con'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, chat);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('chat'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, changePass);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('change_pass'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          return changeLang(context);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('change_lang'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, login, (route) => false);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('log'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  )),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    tr('notify'),
+                    style:
+                        textStyle.copyWith(color: Colors.black, fontSize: 16),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                  ),
+                  Transform(
+                    alignment: Alignment.center,
+                    transform: Matrix4.rotationY(
+                        context.locale.languageCode == 'ar' ? math.pi : 0),
+                    child: FlutterSwitch(
+                      width: 50.0,
+                      height: 27,
+                      value: notify,
+                      borderRadius: 30.0,
+                      showOnOff: false,
+                      activeColor: buttonColor,
+                      inactiveColor: Colors.white,
+                      switchBorder: Border.all(
+                        color: grey,
+                        width: 1.0,
+                      ),
+                      padding: 0,
+                      activeToggleColor: white,
+                      inactiveToggleColor: grey,
+                      onToggle: (v) {
+                        setState(() {
+                          notify = !notify;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),

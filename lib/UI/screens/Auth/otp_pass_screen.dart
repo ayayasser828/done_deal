@@ -57,7 +57,7 @@ class OTPPassScreen extends StatelessWidget {
               SizedBox(height: 4.h,),
               SizedBox(
                 width: 85.w,
-                height: 37.h,
+                height: 40.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -74,10 +74,9 @@ class OTPPassScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(height: 1.h,),
-                        Text(tr('enter')),
-                        SizedBox(height: 1.h,),
+                        Text(tr('enter'),style: textStyle3,),
                         Center(child: Text('+201033076500',style: textStyle,textAlign: TextAlign.center)),
-                        SizedBox(height: 4.h,),
+                        SizedBox(height: 3.h,),
                         SizedBox(width: width*0.8,height: height*0.1,child: buildPinCodeFields(context),),
                         MyButtonWidget(
                             btnTxt: tr('verify'),
