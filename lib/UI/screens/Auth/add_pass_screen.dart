@@ -98,7 +98,7 @@ class AddPassScreen extends StatelessWidget {
                             btnTxt: tr('register'),
                             btnWidth: 78.w,
                             btnHeight: 5.h,
-                            onPressed: () => Navigator.pushNamed(context, addDoc),
+                            onPressed: () => Navigator.pushNamedAndRemoveUntil(context, confirm, (route) => false),
                             color: buttonColor,
                             borderColor: buttonColor,
                             weight: FontWeight.w600,

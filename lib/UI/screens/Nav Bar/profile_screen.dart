@@ -71,18 +71,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(
                     width: 3.w,
                   ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(tr('acc'),
-                          style: textStyle.copyWith(color: Colors.black),
-                          textAlign: TextAlign.center),
-                      Text('10000 Egp',
-                          style: textStyle.copyWith(fontSize: 13.sp),
-                          textAlign: TextAlign.center),
-                    ],
-                  ),
+                  Text('User Name',
+                      style: textStyle.copyWith(color: Colors.black,fontSize: 16.sp),
+                      textAlign: TextAlign.center),
                 ],
               ),
               SizedBox(
@@ -118,34 +109,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        height: 3.h,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, sendContract);
-                        },
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icons/notify.svg',
-                              fit: BoxFit.scaleDown,
-                            ),
-                            SizedBox(
-                              width: 3.w,
-                            ),
-                            Text(
-                              tr('send_con'),
-                              style: textStyle.copyWith(
-                                  color: Colors.black, fontSize: 14.sp),
-                              textAlign: TextAlign.center,
-                              maxLines: 1,
-                            ),
-                          ],
-                        ),
-                      ),
+                      // SizedBox(
+                      //   height: 3.h,
+                      // ),
+                      // InkWell(
+                      //   onTap: () {
+                      //     Navigator.pushNamed(context, sendContract);
+                      //   },
+                      //   child: Row(
+                      //     crossAxisAlignment: CrossAxisAlignment.center,
+                      //     mainAxisAlignment: MainAxisAlignment.start,
+                      //     children: [
+                      //       SvgPicture.asset(
+                      //         'assets/icons/notify.svg',
+                      //         fit: BoxFit.scaleDown,
+                      //       ),
+                      //       SizedBox(
+                      //         width: 3.w,
+                      //       ),
+                      //       Text(
+                      //         tr('send_con'),
+                      //         style: textStyle.copyWith(
+                      //             color: Colors.black, fontSize: 14.sp),
+                      //         textAlign: TextAlign.center,
+                      //         maxLines: 1,
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                       SizedBox(
                         height: 3.h,
                       ),
