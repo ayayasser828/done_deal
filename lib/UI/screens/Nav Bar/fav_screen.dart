@@ -20,14 +20,15 @@ class FavoritesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 4.h,),
+              SizedBox(height: 2.h,),
               Text(tr('fav'),style: textStyle.copyWith(fontSize: 20.sp),),
-              SizedBox(height: 4.h,),
+              SizedBox(height: 1.5.h,),
               Center(
                 child: SizedBox(
-                  height: 70.h,
+                  height: 73.h,
                   width: width,
                   child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
                         return HomeCard();
                       },

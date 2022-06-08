@@ -18,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18.0),
         child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -67,9 +68,10 @@ class HomeScreen extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  height: 75.h,
+                  height: 73.h,
                   width: width,
                   child: ListView.separated(
+                      physics: BouncingScrollPhysics(),
                       itemBuilder: (BuildContext context, int index) {
                         return HomeCard();
                       },
