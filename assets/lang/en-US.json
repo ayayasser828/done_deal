@@ -52,5 +52,6 @@
   "company_name" : "COMPANY NAME : ",
   "company_com" : "COMPANY Com : ",
   "male" : "Male",
-  "female" : "Female"
+  "female" : "Female",
+  "filter" : "Search Now"
 }

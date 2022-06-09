@@ -50,5 +50,6 @@
   "client_phone" : "هاتف العميل",
   "upload" : "رفع العقد",
   "company_name" : "اسم الشركة : ",
-  "company_com" : "نسبة الشركة : "
+  "company_com" : "نسبة الشركة : ",
+  "filter" : "البحث الأن"
 }

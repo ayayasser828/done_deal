@@ -16,7 +16,7 @@ class NavBarCubit extends Cubit<NavBarState> {
 
   int currentIndex = 0;
   List<Widget> screens = [
-    const HomeScreen(),
+    HomeScreen(),
     const FavoritesScreen(),
     const ProfileScreen(),
     const NotificationScreen(),
@@ -39,7 +39,7 @@ class NavBarCubit extends Cubit<NavBarState> {
   void changeBottomNav(int index) {
     currentIndex = index;
     if (currentIndex == 1) {
-      const HomeScreen();
+      HomeScreen();
     } else if (currentIndex == 2) {
       const FavoritesScreen();
     } else if (currentIndex == 3) {
