@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
           return BlocProvider(
             create: (context) => GeneralCubit(),
             child: Container(
-              height: height * 0.7,
+              height: height * 0.72,
               color: Colors.transparent,
               child: BlocConsumer<GeneralCubit, GeneralState>(
                 listener: (context, state) {},
@@ -185,7 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     style: textStyle,
                                   ),
                                   SizedBox(
-                                    width: width * 0.4,
+                                    width: width * 0.48,
                                   ),
                                   Container(
                                     width: 30.w,
@@ -269,6 +269,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           .rangeSlider(values);
                                     }),
                               ),
+                              SizedBox(
+                                height: height * 0.01,
+                              ),
                               Text(
                                 tr('Space'),
                                 style: textStyle,
@@ -316,7 +319,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           .rangeSlider2(values);
                                     }),
                               ),
-                              SizedBox(height: 2.h,),
+                              SizedBox(height: 3.h,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -335,7 +338,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 1.h,),
+                              SizedBox(height: 2.h,),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 crossAxisAlignment: CrossAxisAlignment.center,
