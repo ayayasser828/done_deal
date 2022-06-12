@@ -6,10 +6,16 @@ class GeneralCubit extends Cubit<GeneralState> {
   GeneralCubit() : super(GeneralInitial());
 
   RangeValues currentRangeValues = const RangeValues(10, 1000);
+  RangeValues currentRangeValues2 = const RangeValues(10, 1000);
 
   void rangeSlider(RangeValues values) {
     currentRangeValues = values;
     emit(Slider());
+  }
+
+  void rangeSlider2(RangeValues values) {
+    currentRangeValues2 = values;
+    emit(Slider2());
   }
 
   String dropDownValue = 'Lowest';

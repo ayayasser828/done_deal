@@ -80,38 +80,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 4.h,
               ),
               SizedBox(
-                  height: 43.h,
+                  height: 38.h,
                   width: 70.w,
                   child: Column(
                     children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, trans);
-                        },
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/icons/notify.svg',
-                              fit: BoxFit.scaleDown,
-                            ),
-                            SizedBox(
-                              width: 3.w,
-                            ),
-                            Text(
-                              tr('trans'),
-                              style: textStyle.copyWith(
-                                  color: Colors.black, fontSize: 14.sp),
-                              textAlign: TextAlign.center,
-                              maxLines: 1,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 3.h,
-                      ),
                       InkWell(
                         onTap: () {
                           Navigator.pushNamed(context, chat);
@@ -138,7 +110,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -166,7 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -194,7 +166,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 3.h,
+                        height: 4.h,
                       ),
                       InkWell(
                         onTap: () {

@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../bussiness logic/general/general_cubit.dart';
+import '../../widgets/drop_down.dart';
 import '../../widgets/home_card.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
@@ -19,33 +20,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<String> filter = [
-    'TOPS',
-    'DRESSES',
-    'PANTS',
-    'SHOES',
-    'TSHIRTS',
-    'TOPS',
+
+  static final List<String> genderList = [
+    tr('male'),
+    tr('female'),
   ];
+
+  String? selectedGender;
 
   List<String> items = ['Lowest', 'Highest'];
-
-  List<String> textList = [
-    'Nike',
-    'Adidas',
-    'Poebah',
-    'Bata',
-    'Ardira',
-    'Kompak'
-  ];
-
-  List<Color> color = [
-    textColor,
-    Colors.black,
-    Colors.grey,
-    Colors.green,
-    Colors.yellow
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     width: width * 0.4,
                                   ),
                                   Text(
-                                    'Filter',
+                                    tr('filter'),
                                     style: textStyle,
                                   ),
                                   SizedBox(
@@ -198,47 +181,40 @@ class _HomeScreenState extends State<HomeScreen> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Sort By',
+                                    tr('area'),
                                     style: textStyle,
                                   ),
                                   SizedBox(
                                     width: width * 0.4,
                                   ),
                                   Container(
-                                    width: width * 0.33,
-                                    height: height * 0.05,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        border: Border.all(
-                                          color: textColor
-                                        ),
-                                        borderRadius: BorderRadius.circular(5),
+                                    width: 30.w,
+                                    decoration: const BoxDecoration(
+                                        color: textFieldColor,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(17),
+                                            topLeft: Radius.circular(17),
+                                            bottomRight: Radius.circular(17)
+                                        )
                                     ),
-                                    child: Center(
-                                      child: DropdownButton(
-                                        value: BlocProvider.of<GeneralCubit>(
-                                            context)
-                                            .dropDownValue,
-                                        icon: const Icon(
-                                          Icons.keyboard_arrow_down,
-                                          color: textColor,
-                                          size: 30,
-                                        ),
-                                        items: items.map((String items) {
-                                          return DropdownMenuItem(
-                                              value: items,
-                                              child: Text(
-                                                items,
-                                                style: textStyle,
-                                              ));
-                                        }).toList(),
-                                        onChanged: (String? v) {
-                                          BlocProvider.of<GeneralCubit>(context)
-                                              .dropDown(v!);
-                                        },
-                                        elevation: 0,
-                                        underline: const SizedBox.shrink(),
-                                      ),
+                                    child: SimpleDropDown<String>(
+                                      isRequired: true,
+                                      list: genderList.isEmpty ? [] : genderList,
+                                      onChanged: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      onSaved: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      value: selectedGender,
+                                      title: 'Gender',
+                                      validator: (city) => city != null
+                                          ? null
+                                          : 'Select Gender',
                                     ),
                                   ),
                                 ],
@@ -247,7 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: height * 0.03,
                               ),
                               Text(
-                                'Price',
+                                tr('Price'),
                                 style: textStyle,
                               ),
                               SizedBox(
@@ -293,123 +269,173 @@ class _HomeScreenState extends State<HomeScreen> {
                                           .rangeSlider(values);
                                     }),
                               ),
-                              SizedBox(
-                                height: height * 0.03,
-                              ),
                               Text(
-                                'Brand',
+                                tr('Space'),
                                 style: textStyle,
                               ),
                               SizedBox(
                                 height: height * 0.02,
                               ),
-                              SizedBox(
-                                  width: width,
-                                  height: height * 0.06,
-                                  child: ListView.separated(
-                                    itemCount:
+                              SliderTheme(
+                                data: SliderTheme.of(context).copyWith(
+                                  activeTrackColor: textColor,
+                                  disabledActiveTrackColor: Colors.grey,
+                                  inactiveTrackColor: Colors.grey,
+                                  valueIndicatorColor: Colors.transparent,
+                                  valueIndicatorTextStyle: textStyle,
+                                  trackShape:
+                                  const RectangularSliderTrackShape(),
+                                  trackHeight: 1.0,
+                                  thumbColor: Colors.white,
+                                  disabledThumbColor: textColor,
+                                  thumbShape: const RoundSliderThumbShape(
+                                    enabledThumbRadius: 100.0,
+                                  ),
+                                ),
+                                child: RangeSlider(
+                                    values:
                                     BlocProvider.of<GeneralCubit>(context)
-                                        .isSelected
-                                        .length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return InkWell(
-                                        onTap: () {
-                                          BlocProvider.of<GeneralCubit>(context)
-                                              .selectedItem(index);
-                                        },
-                                        child: Container(
-                                          width: width * 0.15,
-                                          height: height * 0.02,
-                                          decoration: BoxDecoration(
-                                            color: white,
-                                            border: Border.all(
-                                                color: BlocProvider.of<
-                                                    GeneralCubit>(
-                                                    context)
-                                                    .isSelected[index]
-                                                    ? textColor
-                                                    : Colors.grey,
-                                                width: 1),
-                                            borderRadius:
-                                            BorderRadius.circular(8),
-                                          ),
-                                          child: Center(
-                                            child: Text(
-                                              textList[index],
-                                              style: textStyle.copyWith(
-                                                  color: BlocProvider.of<
-                                                      GeneralCubit>(
-                                                      context)
-                                                      .isSelected[index]
-                                                      ? Colors.black
-                                                      : Colors.grey),
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    separatorBuilder: (context, index) => const SizedBox(
-                                      width: 10,
+                                        .currentRangeValues2,
+                                    min: 10,
+                                    max: 1000,
+                                    divisions: 100,
+                                    labels: RangeLabels(
+                                      BlocProvider.of<GeneralCubit>(context)
+                                          .currentRangeValues2
+                                          .start
+                                          .round()
+                                          .toString(),
+                                      BlocProvider.of<GeneralCubit>(context)
+                                          .currentRangeValues2
+                                          .end
+                                          .round()
+                                          .toString(),
                                     ),
-                                    shrinkWrap: true,
-                                  )),
-                              SizedBox(
-                                height: height * 0.03,
+                                    onChanged: (RangeValues values) {
+                                      BlocProvider.of<GeneralCubit>(context)
+                                          .rangeSlider2(values);
+                                    }),
                               ),
-                              Text(
-                                'Color',
-                                style: textStyle,
+                              SizedBox(height: 2.h,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    tr('Room'),
+                                    style: textStyle,
+                                  ),
+                                  Text(
+                                    tr('Bath'),
+                                    style: textStyle,
+                                  ),
+                                  Text(
+                                    tr('Balacon'),
+                                    style: textStyle,
+                                  ),
+                                ],
                               ),
-                              SizedBox(
-                                height: height * 0.02,
-                              ),
-                              SizedBox(
-                                  width: width,
-                                  height: height * 0.05,
-                                  child: ListView.separated(
-                                    itemCount:
-                                    BlocProvider.of<GeneralCubit>(context)
-                                        .colorSelected
-                                        .length,
-                                    scrollDirection: Axis.horizontal,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return InkWell(
-                                        onTap: () {
-                                          BlocProvider.of<GeneralCubit>(context)
-                                              .selectedColor(index);
-                                        },
-                                        child: Container(
-                                          width: width * 0.1,
-                                          height: height * 0.05,
-                                          decoration: BoxDecoration(
-                                            color: color[index],
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                                color: BlocProvider.of<
-                                                    GeneralCubit>(
-                                                    context)
-                                                    .colorSelected[index]
-                                                    ? Colors.black
-                                                    : Colors.transparent,
-                                                width: 3),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                    separatorBuilder: (context, index) => const SizedBox(
-                                      width: 20,
+                              SizedBox(height: 1.h,),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    width: 28.w,
+                                    decoration: const BoxDecoration(
+                                        color: textFieldColor,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(17),
+                                            topLeft: Radius.circular(17),
+                                            bottomRight: Radius.circular(17)
+                                        )
                                     ),
-                                    shrinkWrap: true,
-                                  )),
-                              SizedBox(
-                                height: height * 0.04,
+                                    child: SimpleDropDown<String>(
+                                      isRequired: true,
+                                      list: genderList.isEmpty ? [] : genderList,
+                                      onChanged: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      onSaved: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      value: selectedGender,
+                                      title: 'Gender',
+                                      validator: (city) => city != null
+                                          ? null
+                                          : 'Select Gender',
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 28.w,
+                                    decoration: const BoxDecoration(
+                                        color: textFieldColor,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(17),
+                                            topLeft: Radius.circular(17),
+                                            bottomRight: Radius.circular(17)
+                                        )
+                                    ),
+                                    child: SimpleDropDown<String>(
+                                      isRequired: true,
+                                      list: genderList.isEmpty ? [] : genderList,
+                                      onChanged: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      onSaved: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      value: selectedGender,
+                                      title: 'Gender',
+                                      validator: (city) => city != null
+                                          ? null
+                                          : 'Select Gender',
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 28.w,
+                                    decoration: const BoxDecoration(
+                                        color: textFieldColor,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(17),
+                                            topLeft: Radius.circular(17),
+                                            bottomRight: Radius.circular(17)
+                                        )
+                                    ),
+                                    child: SimpleDropDown<String>(
+                                      isRequired: true,
+                                      list: genderList.isEmpty ? [] : genderList,
+                                      onChanged: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      onSaved: (gender) {
+                                        setState(() {
+                                          selectedGender = gender;
+                                        });
+                                      },
+                                      value: selectedGender,
+                                      title: 'Gender',
+                                      validator: (city) => city != null
+                                          ? null
+                                          : 'Select Gender',
+                                    ),
+                                  ),
+                                ],
                               ),
+                              SizedBox(height: 4.h,),
                               Center(
                                 child: MyButtonWidget(
-                                    btnTxt: tr('filter'),
+                                    btnTxt: tr('search_now'),
                                     btnWidth: 78.w,
                                     btnHeight: 5.h,
                                     onPressed: () {},

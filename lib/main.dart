@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           locale: context.locale,
           title: 'Done Dell',
-          theme: _buildTheme(Brightness.light),
+          theme: ThemeData(fontFamily: 'Amiri'),
           debugShowCheckedModeBanner: false,
           onGenerateRoute: appRouter.generateRouts,
           //initialRoute: initScreen == 0 || initScreen == null ? start : splash,
@@ -49,11 +49,4 @@ class MyApp extends StatelessWidget {
       }
     );
   }
-}
-ThemeData _buildTheme(brightness) {
-  var baseTheme = ThemeData(brightness: brightness);
-
-  return baseTheme.copyWith(
-    textTheme: GoogleFonts.amiriTextTheme(baseTheme.textTheme),
-  );
 }

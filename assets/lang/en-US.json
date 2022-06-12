@@ -53,5 +53,12 @@
   "company_com" : "COMPANY Com : ",
   "male" : "Male",
   "female" : "Female",
-  "filter" : "Search Now"
+  "search_now" : "Search Now",
+  "filter" : "Filter",
+  "area" : "Area",
+  "Price" : "Price",
+  "Space" : "Space",
+  "Room" : "Room",
+  "Bath" : "Bath",
+  "Balacon" : "Balacon"
 }

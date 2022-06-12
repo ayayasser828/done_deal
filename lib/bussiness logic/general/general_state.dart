@@ -6,6 +6,7 @@ abstract class GeneralState {}
 class GeneralInitial extends GeneralState {}
 
 class Slider extends GeneralState {}
+class Slider2 extends GeneralState {}
 
 class DropDownMenu extends GeneralState {}
 
