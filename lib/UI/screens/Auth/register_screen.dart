@@ -24,6 +24,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   String? selectedGender;
 
+  int groupValue = -1;
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -48,10 +50,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               SizedBox(height: 4.h,),
               Text(tr('register_acc'),style: textStyle.copyWith(fontSize: 20.sp),),
-              SizedBox(height: 4.h,),
+              SizedBox(height: 1.h,),
               SizedBox(
                 width: 85.w,
-                height: 65.h,
+                height: 72.h,
                 child: Card(
                   color: Colors.white,
                   shape: const RoundedRectangleBorder(
@@ -171,6 +173,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           ),
                         ),
                         SizedBox(height: 3.h,),
+                        Row(
+                          mainAxisAlignment:
+                          MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Row(
+                              children: [
+                                Radio(
+                                  materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                                  activeColor: textColor,
+                                  value: 0,
+                                  groupValue: groupValue,
+                                  onChanged: (dynamic value) {
+                                    setState(() {
+                                      groupValue = value;
+                                    });
+                                  },
+                                ),
+                                Text('Client',style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),)
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Radio(
+                                  activeColor: textColor,
+                                  value: 1,
+                                  groupValue: groupValue,
+                                  onChanged: (dynamic value) {
+                                    setState(() {
+                                      groupValue = value;
+                                    });
+                                  },
+                                ),
+                                Text('Freelancer',style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),)
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 2.h,),
                         MyButtonWidget(
                             btnTxt: tr('next'),
                             btnWidth: 78.w,

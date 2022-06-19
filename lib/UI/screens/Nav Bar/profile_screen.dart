@@ -71,19 +71,84 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   SizedBox(
                     width: 3.w,
                   ),
-                  Text('User Name',
-                      style: textStyle.copyWith(color: Colors.black,fontSize: 16.sp),
-                      textAlign: TextAlign.center),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(tr('acc'),
+                          style: textStyle.copyWith(color: Colors.black),
+                          textAlign: TextAlign.center),
+                      Text('10000 Egp',
+                          style: textStyle.copyWith(fontSize: 13.sp),
+                          textAlign: TextAlign.center),
+                    ],
+                  ),
                 ],
               ),
               SizedBox(
                 height: 4.h,
               ),
               SizedBox(
-                  height: 38.h,
+                  height: 50.h,
                   width: 70.w,
                   child: Column(
                     children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, trans);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('trans'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, sendContract);
+                        },
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/icons/notify.svg',
+                              fit: BoxFit.scaleDown,
+                            ),
+                            SizedBox(
+                              width: 3.w,
+                            ),
+                            Text(
+                              tr('send_con'),
+                              style: textStyle.copyWith(
+                                  color: Colors.black, fontSize: 14.sp),
+                              textAlign: TextAlign.center,
+                              maxLines: 1,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 3.h,
+                      ),
                       InkWell(
                         onTap: () {
                           Navigator.pushNamed(context, chat);
@@ -110,7 +175,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 3.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -138,7 +203,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 3.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -166,7 +231,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 4.h,
+                        height: 3.h,
                       ),
                       InkWell(
                         onTap: () {
@@ -203,7 +268,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Text(
                     tr('notify'),
                     style:
-                        textStyle.copyWith(color: Colors.black, fontSize: 16),
+                    textStyle.copyWith(color: Colors.black, fontSize: 16),
                     textAlign: TextAlign.center,
                     maxLines: 1,
                   ),
@@ -246,46 +311,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
     showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-              content: Text(
-                tr('change_lang'),
-                style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              backgroundColor: white,
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(15.0))),
-              actions: [
-                Center(
-                  child: FlatButton(
-                      onPressed: () {
-                        if (context.locale.languageCode == 'ar') {
-                          GetLAng.lang = 'en_US';
-                          context.setLocale(const Locale('en', 'US'));
-                        } else {
-                          GetLAng.lang = 'ar_EG';
-                          context.setLocale(const Locale('ar', 'EG'));
-                        }
-                        Navigator.of(context).pop();
-                      },
-                      child: Container(
-                        height: 40,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: buttonColor,
-                        ),
-                        child: Center(
-                            child: Text(
-                                context.locale.languageCode == 'ar'
-                                    ? 'ENGLISH'
-                                    : "عربي",
-                                style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: white))),
-                      )),
-                )
-              ],
-            ));
+          content: Text(
+            tr('change_lang'),
+            style:
+            const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: white,
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15.0))),
+          actions: [
+            Center(
+              child: FlatButton(
+                  onPressed: () {
+                    if (context.locale.languageCode == 'ar') {
+                      GetLAng.lang = 'en_US';
+                      context.setLocale(const Locale('en', 'US'));
+                    } else {
+                      GetLAng.lang = 'ar_EG';
+                      context.setLocale(const Locale('ar', 'EG'));
+                    }
+                    Navigator.of(context).pop();
+                  },
+                  child: Container(
+                    height: 40,
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: buttonColor,
+                    ),
+                    child: Center(
+                        child: Text(
+                            context.locale.languageCode == 'ar'
+                                ? 'ENGLISH'
+                                : "عربي",
+                            style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: white))),
+                  )),
+            )
+          ],
+        ));
   }
 }

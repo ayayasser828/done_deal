@@ -7,9 +7,15 @@ import '../../../constant/style.dart';
 import '../../widgets/text_button.dart';
 import '../../widgets/text_form_filed.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  int groupValue = -1;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -97,7 +103,46 @@ class LoginScreen extends StatelessWidget {
                               ],
                             ),
                           ),
-                          SizedBox(height: 5.h,),
+                          SizedBox(height: 3.h,),
+                          Row(
+                            mainAxisAlignment:
+                            MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                children: [
+                                  Radio(
+                                    materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                    activeColor: textColor,
+                                    value: 0,
+                                    groupValue: groupValue,
+                                    onChanged: (dynamic value) {
+                                      setState(() {
+                                        groupValue = value;
+                                      });
+                                    },
+                                  ),
+                                  Text('Client',style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),)
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Radio(
+                                    activeColor: textColor,
+                                    value: 1,
+                                    groupValue: groupValue,
+                                    onChanged: (dynamic value) {
+                                      setState(() {
+                                        groupValue = value;
+                                      });
+                                    },
+                                  ),
+                                  Text('Freelancer',style: textStyle.copyWith(fontSize: 10.sp,color: buttonColor),)
+                                ],
+                              ),
+                            ],
+                          ),
+                          SizedBox(height: 2.h,),
                           MyButtonWidget(
                               btnTxt: tr('login_now'),
                               btnWidth: 78.w,
